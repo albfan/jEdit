@@ -1,0 +1,46 @@
+<!-- jEdit 4.0 Macro Guide, (C) 2001, 2002 John Gellene          -->
+<!--                                                             -->
+<!-- jEdit buffer-local properties:                              -->
+<!-- :indentSize=1:noTabs=yes:maxLineLen=72:tabSize=2:           -->
+<!--                                                             -->
+<!-- This file cover the introductory section of the macro guide -->
+<!-- $Id$
+ -->
+
+<chapter id="macro-basics"><title>Introducing BeanShell</title>
+
+  <para>
+   Here is how BeanShell's author, Pat Niemeyer, describes his creation:
+  </para>
+
+  <blockquote>
+   <para>
+    <quote>BeanShell is a small, free, embeddable, Java source
+    interpreter with object scripting language features, written in
+    Java. BeanShell executes standard Java statements and
+    expressions, in addition to obvious scripting commands and
+    syntax. BeanShell supports scripted objects as simple method
+    closures like those in Perl and JavaScript.</quote>
+   </para>
+  </blockquote>
+
+  <para>
+   You do not have to know anything about Java to begin writing your own
+   jEdit macros. But if you know how to program in Java, you already know
+   how to write BeanShell scripts.  The major strength of using
+   BeanShell with a program written in Java is that it allows the user to
+   customize the program's behavior using the same interfaces
+   designed and used by the program itself. BeanShell can
+   turn a well-designed application into a powerful, extensible toolkit.
+  </para>
+
+  <para>
+   This guide focuses on using BeanShell in macros. If you are interested
+   in learning more about BeanShell generally, consult the <ulink
+   url="http://www.beanshell.org">BeanShell web site</ulink>. Information
+   on how to run and organize macros, whether included with the jEdit
+   installation or written by you, can be found in
+   <xref linkend="using-macros"/>.
+  </para>
+
+</chapter>
