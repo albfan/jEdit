@@ -1,0 +1,22 @@
+plugin.LatestVersionPlugin.activate=defer
+
+plugin.LatestVersionPlugin.name=Latest Version Check
+plugin.LatestVersionPlugin.author=Slava Pestov
+plugin.LatestVersionPlugin.version=1.4
+plugin.LatestVersionPlugin.docs=LatestVersion.html
+
+plugin.LatestVersionPlugin.depend.0=jedit 04.02.01.00
+
+plugin.LatestVersionPlugin.menu-item=version-check
+
+version-check.label=Check jEdit Version
+
+version-check.up-to-date.title=jEdit Version Up To Date
+version-check.up-to-date.message=\
+	You are running the latest available jEdit release.
+
+version-check.new-version.title=New jEdit Version Available
+version-check.new-version.message=\
+	jEdit {0} is now available. Would you like to see more information?
+
+version-check.url=http://www.jedit.org/jEdit-version.txt
