@@ -1,0 +1,268 @@
+<!-- jEdit buffer-local properties: -->
+<!-- :indentSize=1:noTabs=true: -->
+
+<chapter id="basics"><title>jEdit Basics</title>
+ <sect1 id="buffers"><title>Buffers</title>
+  <para>
+   Several files can be opened and edited at once.
+   Each open file is referred to as a <firstterm>buffer</firstterm>.
+   The combo box above the text area selects the buffer to edit.
+   Different emblems are displayed next to buffer names in the list,
+   depending the buffer's state;
+   a red disk is shown for buffers with unsaved changes,
+   a lock is shown for read-only buffers,
+   and a spark is shown for new buffers which don't yet exist on disk.
+  </para>
+  <para>
+   In addition to the buffer combo box, various commands can also be
+   used to select the buffer to edit.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>Go to Previous Buffer</guimenuitem>
+   (keyboard shortcut: <keycombo><keycap>Control</keycap><keycap>Page Up</keycap>
+   </keycombo>) switches to the previous buffer in the list.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>Go to Next Buffer</guimenuitem>
+   (keyboard shortcut: <keycombo><keycap>Control</keycap><keycap>Page Down</keycap>
+   </keycombo>) switches to the next buffer in the list.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>Go to Recent Buffer</guimenuitem>
+   (keyboard shortcut: <keycombo><keycap>Control</keycap><keycap>`</keycap></keycombo>)
+   switches to the buffer that was being edited prior to the current one.
+  </para>
+  <sect2><title>Memory Usage</title>
+   <para>
+    The maximum number of open buffers depends on available <firstterm>Java
+    heap memory</firstterm>. When stored in the Java heap, each buffer requires
+    approximately two and a half times it's size on disk. This overhead is caused
+    by the file being stored internally as Unicode (see
+    <xref linkend="encodings" />), and the fact that additional information,
+    such as line numbers, also needs to be stored.
+   </para>
+   <para>
+    The status bar at the bottom of the view displays used and total Java
+    heap memory; see <xref linkend="status-bar" /> for details. This can give
+    you a rough idea of how much memory the currently opened files are using.
+    The Java heap grows if it runs out of room; but it only grows to a certain
+    maximum size, and attempts to allocate Java objects that would grow the
+    heap beyond this size fail with out-of-memory errors.
+   </para>
+   <para>
+    One side-effect of this is that if the maximum heap size is set too low,
+    opening large files or performing other memory-intensive operations can
+    fail, even if you have a lot of system memory free. The solution is to
+    change the Java heap size.
+   </para>
+   <para>
+    To change the heap size on Windows, run <quote>Set jEdit Parameters</quote>
+    from the <quote>jEdit</quote> group in the
+    Programs menu. Then, in the resulting dialog box, under <quote>Command
+    line options for Java executable</quote>, change the option that looks like
+    so:
+   </para>
+   <screen>-mx32m</screen>
+   <para>
+    (See <xref linkend="launcher-starting"/> for more information about the
+    <quote>Set jEdit Parameters</quote> dialog box.)
+   </para>
+   <para>
+    On Unix, edit the <filename>jedit</filename> shell script and change the
+    line that looks like so:
+   </para>
+   <screen>JAVA_HEAP_SIZE=32</screen>
+   <para>
+    In both cases, replace <quote>32</quote> with the desired heap size, in
+    megabytes.
+   </para>
+  </sect2>
+ </sect1>
+ <sect1 id="views"><title>Views</title>
+  <para>
+   Each editor window is known as a <firstterm>view</firstterm>.
+   It is possible to have multiple views open at once, and each view can
+   be split into multiple panes.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>New View</guimenuitem> creates a new view.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>Close View</guimenuitem> closes the
+   current view. If only one view is open, closing it will exit jEdit,
+   unless background mode is on; see <xref linkend="starting" /> for information
+   about starting jEdit in background mode.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>Split
+   Horizontally</guimenuitem>
+   (shortcut: <keycombo><keycap>Control</keycap><keycap>2</keycap></keycombo>)
+   splits the view into two text areas, placed above each other.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>Split
+   Vertically</guimenuitem>
+   (shortcut: <keycombo><keycap>Control</keycap><keycap>3</keycap></keycombo>)
+   splits the view into two text areas, placed next to each other.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>Unsplit</guimenuitem>
+   (shortcut: <keycombo><keycap>Control</keycap><keycap>1</keycap></keycombo>)
+   removes all but the current text area from the view.
+  </para>
+  <para>
+   When a view is split, editing commands operate on the text area that
+   has keyboard focus. To give a text area keyboard focus, click in it
+   with the mouse, or use the following commands.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>Go to
+   Previous Text Area</guimenuitem>
+   (shortcut: <keycombo><keycap>Alt</keycap><keycap>Page Up</keycap></keycombo>)
+   shifts keyboard focus to the previous text area.
+  </para>
+  <para>
+   <guimenu>View</guimenu>&gt;<guimenuitem>Go to
+   Next Text Area</guimenuitem>
+   (shortcut: <keycombo><keycap>Alt</keycap><keycap>Page Down</keycap></keycombo>)
+   shifts keyboard focus to the next text area.
+  </para>
+  <para>
+   Clicking the text area with the right mouse button displays a popup menu.
+   Both this menu and the tool bar at the top of the view offer quick
+   mouse-based access to frequently-used commands.
+   The contents of the tool bar and right-click menu can be
+   changed in the <guimenu>Utilities</guimenu>&gt;<guimenuitem>Global
+   Options</guimenuitem> dialog box.
+  </para>
+  <sect2 id="docking"><title>Window Docking</title>
+   <para>
+    The file system browser, HyperSearch results window, and many plugin
+    windows can optionally be docked into the view. This can be
+    configured in the <guibutton>Docking</guibutton> pane of the
+    <guimenu>Utilities</guimenu>&gt;<guimenuitem>Global Options</guimenuitem>
+    dialog box; see <xref linkend="global-opts" />.
+   </para>
+   <para>
+    When windows are docked into the view, strips of buttons are shown in the
+    left, right, top, and bottom sides of the text area. Each strip contains
+    buttons for the windows docked in that location, as well as a close box.
+    Clicking a window's button shows that dockable window; clicking the close
+    box hides the window again.
+   </para>
+   <para>
+    The commands in the <guimenu>View</guimenu>&gt;<guisubmenu>Docking</guisubmenu>
+    menu (shortcuts: <keycombo><keycap>Control</keycap><keycap>E</keycap></keycombo>
+    <keycap>1</keycap>, <keycap>2</keycap>, <keycap>3</keycap>, <keycap>4</keycap>)
+    provide keyboard equivalents for the close boxes.
+   </para>
+  </sect2>
+  <sect2 id="status-bar"><title>The Status Bar</title>
+   <para>
+    The <firstterm>status bar</firstterm> at the bottom of the view consists
+    of the following components, from left to right:
+   </para>
+   <itemizedlist>
+    <listitem><para>The line number containing the caret</para></listitem>
+    <listitem><para>The column position of the caret, with the leftmost column
+    being 1.</para>
+    <para>
+     If the line contains tabs, the <firstterm>file</firstterm> position (where a hard
+     tab is counted as one column) is shown first, followed by the
+     <firstterm>screen</firstterm> position (where each tab counts for the number of
+     columns until the next tab stop).
+    </para>
+    <para>
+     Double-clicking on the caret location indicator displays the
+     <guimenu>Edit</guimenu>&gt;<guimenuitem>Go to Line</guimenuitem> dialog
+     box; see <xref linkend="lines" />.
+    </para></listitem>
+    <listitem><para>Prompts displayed by commands such as those dealing with
+    registers and markers (see <xref linkend="text-transfer" /> and <xref
+    linkend="markers" />), also I/O progress messages (see
+    <xref linkend="threaded-io" />)</para></listitem>
+    <listitem><para>The current buffer's edit mode. Double-clicking this
+    displays the <guimenu>Utilities</guimenu>&gt;<guimenuitem>Buffer
+    Options</guimenuitem> dialog box. See <xref
+    linkend="modes" /> and <xref linkend="buffer-opts" />.</para></listitem>
+    <listitem><para>The current buffer's character encoding.  Double-clicking this
+    displays the <guimenu>Utilities</guimenu>&gt;<guimenuitem>Buffer
+    Options</guimenuitem> dialog box. See <xref
+    linkend="encodings" /> and <xref linkend="buffer-opts" />.</para></listitem>
+    <listitem><para>The current buffer's fold mode; this is either
+    <quote>none</quote>, <quote>indent</quote> or <quote>explicit</quote>.
+    Clicking here toggles between the three modes. See <xref linkend="folding" />.
+    </para></listitem>
+    <listitem><para>If multiple selection is enabled, the string
+    <guilabel>multi</guilabel>; otherwise <guilabel>single</guilabel>.
+    Clicking here or pressing <keycombo><keycap>Control</keycap>
+    <keycap>\</keycap></keycombo> turns multiple selection on and off. See <xref
+    linkend="multi-select" />.</para></listitem>
+    <listitem><para>If overwrite mode is enabled, the string
+    <guilabel>ovr</guilabel>; otherwise <guilabel>ins</guilabel>.
+    Clicking here or pressing
+    <keycap>Insert</keycap> turns overwrite mode on and off. See <xref
+    linkend="entering-text" />.</para></listitem>
+    <listitem><para>A Java heap memory usage indicator, that shows used versus
+    total heap memory, in megabytes. Double-clicking here opens the
+    <guimenu>Utilities</guimenu>&gt;<guimenuitem>Memory Status</guimenuitem>
+    dialog box.</para></listitem>
+   </itemizedlist>
+  </sect2>
+ </sect1>
+ <sect1 id="textarea"><title>The Text Area</title>
+  <para>
+   Text editing takes place in the text area. It behaves in a similar
+   manner to many Windows and MacOS editors; the few
+   unique features will be described in this section.
+  </para>
+  <para>
+   The text area will automatically scroll up or down if text editing is performed
+   closer than three lines from the top or bottom of the text area. This
+   feature is called <firstterm>electric scrolling</firstterm> and can be disabled
+   in the <guibutton>Text Area</guibutton> pane of the
+   <guimenu>Utilities</guimenu>&gt;<guimenuitem>Global Options</guimenuitem>
+   dialog box; see <xref linkend="global-opts" />.
+  </para>
+  <para>
+   To aid in locating the caret, the current line is drawn with a
+   different background color. To make it clear which lines end with
+   white space, end of line markers are drawn at the end of each line.
+   Both these features can be disabled in the <guibutton>Text Area</guibutton>
+   pane of the <guimenu>Utilities</guimenu>&gt;<guimenuitem>Global
+   Options</guimenuitem> dialog box.
+  </para>
+  <para>
+   The strip on the left of the text area is called a <firstterm>gutter</firstterm>.
+   The gutter displays marker and register locations; it will also display
+   line numbers if the 
+   <guimenu>View</guimenu>&gt;<guimenuitem>Line Numbers</guimenuitem> (shortcut:
+   <keycombo><keycap>Control</keycap><keycap>E</keycap></keycombo>
+   <keycombo><keycap>Control</keycap><keycap>T</keycap></keycombo>) command is invoked.
+  </para>
+ </sect1>
+ <sect1 id="repeat"><title>Command Repetition</title>
+  <para>
+   There is one other jEdit feature that needs to be discussed before we
+   continue further.
+   To repeat a command any number of times, invoke
+   <guimenu>Utilities</guimenu>&gt;<guimenuitem>Repeat Next Command</guimenuitem>
+   (shortcut:
+   <keycombo><keycap>Control</keycap><keycap>Enter</keycap></keycombo>) and enter the
+   desired repeat count, followed by the command to repeat (either a keystroke
+   or menu item selection). For example,
+   <quote><keycombo><keycap>Control</keycap><keycap>Enter</keycap></keycombo>
+   <keycap>1</keycap> <keycap>4</keycap>
+   <keycombo><keycap>Control</keycap><keycap>D</keycap></keycombo></quote> will delete
+   14 lines, and <quote><keycombo><keycap>Control</keycap><keycap>Enter</keycap></keycombo>
+   <keycap>8</keycap>
+   <keycap>#</keycap></quote>
+   will insert <quote>########</quote> in the buffer.
+  </para>
+  <para>
+   If you specify a repeat count greater than 20, a confirmation dialog box will
+   be displayed, asking if you really want to perform the action. This prevents
+   you from hanging jEdit by executing a command too many times.
+  </para>
+ </sect1>
+</chapter>
