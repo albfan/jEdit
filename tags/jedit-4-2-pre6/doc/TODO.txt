@@ -1,0 +1,175 @@
+TO DO
+
+Note that this is not a complete to do list. It mostly only lists bugs
+and quirks that I need to fix eventually.
+
+- enter after a fold broken *AGAIN*
+- removing property from mode does not take effect until restart
+- new file: horiz scroll wrong
+- shortcuts: stale shortcuts remain?
+- if a plugin's stop() throws an exception, infinite loop?
+- no need to wait for requests after newFile()
+- test inserts with fold vis map
+- plugin mgr install doesn't update existing plugins
+- class loading problems
+- motif l&f: shortcuts in menu items
+- some JLists do not auto-scroll on keystroke
+- C+b -- click -- keys don't work
+- C+` inserts ` again
+- clean up VFSManager.errorOccurred() -vs- BufferIORequest.ERROR_OCCURRED
+- NO_WORD_BREAK and NO_LINE_BREAK: need to think about this, is it worth
+  keeping INVALID? report errors in some other manner?
+- how to handle S+0-9?
+
++ docs:
+
+- -reuseview in help
+- quicknotepad help needs to be generated
+- document lack of C+e C+e
+- auto indent: don't de-indent on enter if no leading indent at all?
+- note about dependencies
+- help:
+  - titles in search are fucked
+- new macro handler api
+- sidebars: need a border or some sort
+- user's guide:
+  - part III
+    - describe alternative ways to obtain buffers, edit panes, text areas,
+      in a sidebar about changing them
+- examples of EOL_SPAN_REGEXP matching in docs
+- plugin tutorial:
+  - plugin build environment docs
+  - auto-created actions
+  - link to jEdit devel page
+  - quicknotepad class -- links to API docs
+  - functions - links to API docs
+  - quicknotepad docs
+- plugin tips and techniques:
+  - common. properties, using properties for UI strings
+  - cutting down on startup time
+  - canned dialog boxes in GUIUtilities
+  - tools.jar
+  - string comparison in MiscUtilities
+  - writing a macro handler
+  - writing a fold handler
+  - OperatingSystem class
+  - option groups
+  - listening for buffer changes
+  - canned controls:
+    animated icon, color well button, enhanced dialog,
+    font selector, history text field, 
+    jcheckboxlist, rolloverbutton,
+    variablegridlayout
+  - displaying a help viewer
+  - canned icons
+  - vfs implementation
+  - running stuff in i/o threads
+  - multi-threaded i/o
+  - jeditresource: protocol
+  - getting line syntax info, textutilities.getTokenAtOffset()
+  - text area extensions
+  - text area caret & scroll listeners
+  - status bar messages & readNextChar()
+- vfs javadoc: invokeAndWait() example for createVFSSession()
+
++ features:
+
+- unindentCurrentLine property
+- need timeouts for plugin manager list download.
+- encoding menu with "More"
+- backup time distance setting
+- fsb date
+- preserve 2 spaces after . w/ format
+- preserve caret pos w/ format
+- toggle caret scroll to when not in vis region?
+- print selection
+- adding to icons prop
+- option for b&w print
+- document deep indent
+- tall caret and tab
+- tall caret and backspace
+- fsb default size
+- C+ENTER 3 C+2
+- optional dependencies
+- wheel mouse -- option: jEdit mods -vs- system-wide mods
+- format -- instead of \n\n, what if it has \n   \n?
+- history text field tweak
+- do all modifier handling through the modifier mapping
+- perm to string for FTP plugin
+- if A depends on B but A is loaded before B and B breaks, A ends up
+  being loaded. Solution: load plugins in order of dependencies?
+- rect select and trailing whitespace
+- expand fold: try to expand even if already expanded
+- bsh = { 2 + 2; }
+- eval-for-selected-lines doesn't work with rectangular selection
+- customizable vfs browser extended attributes
+- new plugin mgr: ask before selecting dependencies & 'don't show again'
+- need to get rid of endsWith("/") || endsWith(File.separator) bullshit
+- don't rely on browser view for completion
+- adapt vfs filename field for the path display at the top
+- vfs dialogs: only one field?
+- vfs.isValidPath()
+- make gutter fully painted by extensions just like text area
+- shortcut editor: restore default button
+- can do perl q|...| etc. using begin/end substitution!
+- perl: q{}, etc.
+- do help search in a thread
+- caret saving needs to be more flexible w.r.t. split panes
+- <edit pane,buffer> --> <caret info> map
+- vfs browser right click menu: plugins & favorites
+- don't show 'new directory' in favorites:
+- add option for confirm.save-all
+- consistent formatting for mode files
+- gutter options: add option to completely hide gutter
+- expand: scroll to end of fold if possible
+- need a new jEditLauncher
+- <script> in javadoc
+- auto indent:
+  if(foo)
+    while(bar)
+    {
+      //
+    }
+  <--- cursor here
+- remember floating & cloned dockables in perspective
+- add dockable window state change msg
+- range-comment & rect select
+- autosave recent file list?
+- option to disable floating window dock bar
+- MARK_PREVIOUS delegate like SEQ; update mail.xml
+- INLINE token type
+- AT_WORD_END match
+- abbrevs need an overhaul
+- hypersearch: "open in..." right click menu
+- hypersearch: remember search settings & "refresh" command
+- eval, eval-selection, etc: do array to string override
+- beanshell: unloading commands when a plugin is unloaded
+
++ performance:
+
+- closing lots of files is slow -- esp. with close all dialog box!
+- menu drag: slow
+- bracket matching: no delay for current line match??
+- final optimization for OffsetManager: scan to zero or scan to end
+- do buffer load AWT half immediately after work thread half
+- prioritize work requests so that active buffers get loaded first?
+  too much of a hack?
+- replace all in a directory could be faster
+- buffer.setMode() slow
+- eliminate redundant scans and events when loading buffer
+- make vfs listing faster
+- don't repaint whole selection when resizing
+- could make non-soft wrap chunk merge even faster!
+- syntax SPAN::END substitution: String --> char[] --> String
+- is getScreenLineOfOffset() called often?
+- if caret is at the end of a buffer when doing a replace all, a lot of
+  repaint() and getLineOfOffset() calls are made
+- optimize for no folding & no soft wrap case:
+  - reset() and changed() don't need to scan
+  - scroll/physUp/Down() simpler
+- inserting lines repaints whole text area
+- see if getLineOfOffset() can be optimized
+- nextLineRequested logic is overzealous
+
+jEdit buffer local properties:
+:wrap=hard:maxLineLen=72:indentSize=2:
