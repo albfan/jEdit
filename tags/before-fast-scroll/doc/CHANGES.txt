@@ -1,0 +1,214 @@
+JEDIT 4.3 VERSION HISTORY
+
+{{{ Version 4.3pre2
+
+Thanks to Bertalan Fodor, Jarek Tuszynski, Nicholas O'Leary, and
+Simon Ruggier for contributing to this release.
+
+{{{ Syntax Highlighting
+
+- Updated LilyPond syntax highlighting (Bertalan Fodor).
+
+- Rd syntax highlighting (Jarek Tuszynski).
+
+- Updated ASP syntax highlighting (Simon Ruggier).
+
+}}}
+{{{ Miscellaneous
+
+- When an item from the "Paste Previous" or "Paste Deleted" dialog boxes
+  is inserted, it is moved to the top of the list.
+
+- Pasting now preserves the tall caret.
+
+- New text areas viewing a buffer inherit the fold visibility map from a
+  previous text area.
+
+- The right-click popup for HyperSearch results nodes has three new
+  entries:
+
+  - Open
+  - Open in New View
+  - Open in New Plain View
+  - Open in New Split
+
+- On Mac OS X, the close box is shown with a different appearance if a
+  visible buffer has unsaved changes.
+
+- Dropping text into the text area now selects it (Nicholas O'Leary).
+
+- The cursor is hidden when you start typing.
+
+- Renamed 'Delete Line' to 'Delete Lines'; now does the right thing if
+  more than one line is selected. Same for 'Join Lines' versus
+  'Join Line'.
+
+- When the search bar loses focus, the currently entered text is added
+  to the history.
+
+}}}
+{{{ Bug Fixes
+
+- Fix NullPointerException in file system roots list.
+
+- Search and replace dialog's "Search subdirectories" checkbox did not
+  have an Alt-key mnemonic.
+
+- Binding actions to numeric keypad keys should now work better.
+
+- Pressing something like A+f l where A+f was a prefix but A+f l was
+  not bound would insert l into the buffer, which was undesirable.
+
+- The plugin manager did not select a plugin's dependencies when the
+  plugin was selected for installation.
+
+- Invoking 'Expand Fold' when the fold is expanded would move the caret
+  to the wrong place.
+
+- Changing the wrap mode didn't update screen line counts, causing
+  various problems.
+
+- The custom history text field border with the popup widget is back.
+
+- Fixed a memory leak. Token markers were retaining the line segment
+  they were given to tokenize -- in some cases, this line segment could
+  hang around for a while, and was huge.
+
+- Fix performance regression when deleting text; too many lines were
+  being repainted.
+
+- 'Cut Append' and 'Copy Append' commands did not update the Registers
+  dockable.
+
+- Fix Control key on Mac OS X.
+
+}}}
+{{{ API Changes
+
+- View.updateTitle() is now public.
+
+}}}
+
+}}}
+{{{ Version 4.3pre1
+
+Thanks to Cameron Morrison, Igor Lesik, Jim Lawton, Marcelo Vanzin,
+Nicholas O'Leary and Trevor Harmon for contributing to this release.
+
+{{{ Search and Replace
+
+- When invoking "Find", "Incremental Search for Word" or "HyperSearch
+  for Word" actions, if regular expression search is on, any special
+  characters in the selection are automatically escaped.
+
+- Find dialog box now has fields that accept multi-line input. Pressing
+  ENTER activates the "Find" button; press C+ENTER to insert lines in
+  the field.
+
+- Variables such as "view", "buffer" and "textArea" can now be used from
+  BeanShell replace expressions.
+
+}}}
+{{{ Syntax Highlighting
+
+- Literate Haskell syntax highlighting (Cameron Morrison).
+
+- Updated D syntax highlighting (Jim Lawton).
+
+- Forth syntax highlighting.
+
+- Motorola 68000 assembler syntax highlighting (Igor Lesik).
+
+}}}
+{{{ Scripting
+
+- Macros written in the UTF-8Y and UTF-16 encodings are auto-detected.
+
+- Added Macros->Repeat Last Macro command. This used to be in 4.1, but
+  got removed in 4.2, and now its back due to popular demand.
+
+}}}
+{{{ Miscellaneous
+
+- jEdit no longer runs with Java 2 version 1.3. Java 2 version 1.4 or
+  1.5 is now required.
+
+- If the wrap margin is set to 0 and soft wrap is enabled, wrapping is
+  now performed at the text area width. This used to be in 4.1, but
+  got removed in 4.2, and now its back due to popular demand.
+
+- Rename Autosave & Backup option pane to Save & Backup, move some
+  options from General pane there (Marcelo Vanzin).
+
+- Added Ant target for building a MacOS X .app package (Trevor Harmon).
+
+- Added Register and Marker dockables (Nicholas O'Leary).
+
+- "Rectangular Selection" command now changes the state of the current
+  selection to match the flag.
+
+- "Select All" preserves current scroll position.
+
+- When closing jEdit, open buffers are not added to the "Recent Files"
+  list if the "Restore previously open files on startup" option is on.
+
+- View.goToBuffer() will try to find a non-zero height text area if
+  possible.
+
+- Pressing TAB now preserves the tall caret, if there is one.
+
+- When a directory is reloaded, it is no longer moved to the top of the
+  file system browser's history list.
+
+- Added View->Splitting->Restore Split action -- it recreates a
+  split pane configuration as it was before the most recent 'Unsplit'.
+
+}}}
+{{{ Bug Fixes
+
+- "Backup directory" feature now works if the file being edited is on a
+  different filesystem than the backup directory (Marcelo Vanzin).
+
+- Don't use two-stage save if the file's parent directory is not
+  writeable (Marcelo Vanzin).
+
+- Minor fix for handling of the recent buffer when the current buffer
+  was closed.
+
+- Fix StringIndexOutOfBoundsException when opening files with a
+  malformed XML PI.
+
+- Removing open files from the favorites list didn't work.
+
+- calling readNextChar() no longer clears the status bar after the
+  script returns.
+
+- Fix potential ArrayIndexOutOfBoundsException when indenting lines
+  containing unmatched brackets.
+
+- The "deselecting this plugin will deselect dependencies" message did
+  not give the actual list of dependencies.
+
+- Fixed NullPointerException when selecting QuickNotepad menu items
+  before opening QuickNotepad first.
+
+- Register persistence was broken and didn't work in many cases.
+
+}}}
+{{{ API Changes
+
+- New org.gjt.sp.jedit.gui.HistoryTextArea class can be used by
+  plugins.
+
+- Removed EditPlugin.JAR, deprecated since 4.2.
+
+- Removed Buffer.getRootElements(), Buffer.getParagraphElement() and
+  Buffer.getDefaultRootElement() methods, deprecated since jEdit 4.0.
+
+}}}
+
+}}}
+
+jEdit buffer local properties:
+:wrap=hard:maxLineLen=72:indentSize=2:
+:folding=explicit:collapseFolds=2:
