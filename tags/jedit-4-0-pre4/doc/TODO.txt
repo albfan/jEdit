@@ -1,0 +1,140 @@
+TO DO
+
+- test dir replace all and save all
+- macro that calls saveAllBuffers() results in unbalanced
+  begin/endCompoundEdit() calls?
+- syntax highlighted files and soft wrap
+- switch buffers: bracket matching status msg
+- last line wrapped; shorten; repaint problem
+- narrow: inserting lines messes things up
+- switching buffers: horiz scroll bar not updated?
+- better handling of oom's when loading buffers
+- vertical scrollbar w/ soft wrap wrong
+- fix scrollToCaret()
+- use new offset conversion API throughout
+- save to X:filename on Windows
+- chunk cache & scrolling optimization
+- jdk 1.4: popups in wrong location
+- FAQ: toc needs to include individual q and a's
+- updateChunksUpTo() called too many times
+- sort mode list and put xml near the start so that xhtml files with the
+  .html extension are opened in xml mode
+- see if disabling DTDs improves startup performance
+- plugin manager's progress bar: max value is download size
+- removing a plugin should offer to remove the ones that depend on it too
+- installing source for already installed plugins is not possible: 'hide
+  already installed' checkbox in install plugins dialog box
+- optimise repaining, key insertion
+- select word: non-alpha single char
+- better formatting commands: - document in 'manual wrap' subsect of
+  'word wrap'
+  - format becomes 'wrap paragraph'
+  - 'wrap line'
+  - 'unwrap paragraph'
+- don't repaint whole selection when resizing
+- OK_CANCEL_OPTION in confirm() docs
+- rect select and soft wrap
+- print should not use so much memory
+- idea for fixing buffer property issues: BufferProp class
+- getCenterPoint()
+- support multi-screen systems properly
+- fs browser: scroll to visible after setting divider location
+- if loadMode() throws error, save of a mode file fails?
+- expand fold: try to expand even if already expanded
+- docking buttons not always hidden
+- definately repaint problems
+- keyboard navigation of current directory, recent dirs, etc broken
+- JDK 1.4 focus bugs
+- dwm: not always focused correctly
+- stylesheet: keycap inside keycombo
+- openFile(): can open two copies of the same buffer if a) remote b)
+  canonPath != path; ditto for save as
+- maybe fix GUIUtilities.java to store maximisation state
+- idea to make things go faster: token marker splits on ' ', '\t'
+  then lineToChunkList() has much less work to do, and could even be
+  eliminated completely.
+- text area painter:
+  - use line metrics
+  - use float co-ordinates
+- finish 'troubleshooting' menu:
+  - about cmd
+  - docs in user's guide
+- C+d with selection: delete all selected lines
+- isToolsJarAvailable(): prompt for location in a file dialog box. Need
+  some way of showing arbitriary message in VFS file chooser.
+- last focused dockable cmd
+- XModeHandler: better error reporting
+- document 'evaluate for selected lines'
+- rule set property docs in part II
+- add index terms throughout user's guide!
+- changing heap memory docs
+- plugin manager needs overhauled error reporting
+- make text area's buffer event handler faster
+- API guide: compareStrings(), showPopupMenu()
+- MiscUtilities path name methods need to be documented
+- plugin guide: mention fully qualified class names
+- getFoldLevel(): should not call linesChanged() all the time
+- v2p/p2v: implement from end backward scan
+- loading and saving opt pane: 'choose' button for backup directory
+- style setting for folding line indicator
+- inefficencies: lots of File objects created for the sake of
+  isAbsolute().
+- help viewer: two tabs, contents and index. index browser
+- DockableLayout: handle too large
+- file system browser:
+  - commands->copy file list
+  - much better autocomplete
+  - pre-load open and search dialogs in background thread, and cache
+    them
+  - better permissions API
+  - show wait cursor while directory is loading
+  - directory chooser dialog box
+  - keyboard select file should activate open files -- or Enter press
+- <file>?line= or ?marker=
+- fold navigator to browse fold tree in explicit fold mode
+- reintroduce -bshclient command line switch
+- saving a read-only file: show a confirmation dialog box
+- tool bar option pane: editing existing entries
+- recording 'evaluate for selected lines'
+- rollover toolbar buttons option
+- search and replace: scroll text area so selection is visible despite
+  dialog position
+- better auto indent
+- appendix in plugin guide on contributing plugins
+- HTML mode:
+  - inside tags, delegate on*="..." to JavaScript mode,
+    style="..." to CSS mode
+  - better <script>/<style> handling using nested delegates
+- save markers when a buffer is closed, adding/removing markers shouldn't
+  set the dirty flag
+- replace in selection with rectangular selections
+- keymaps replace .shortcut properties
+  - loaded from $HOME/.jedit/keymaps, and jedit.jar
+  - one keymap can 'extend' another
+  - keymaps are XML files with <bind>, <unbind> tags
+  - jEdit, emacs, keymaps included, maybe others
+  - instead of hard-coded modifier swapping on MacOS, have a MacOS keymap
+- resizing doesn't update horizontal scroll bar
+- find next with $ or ^
+- custom stylesheet: no xmlns
+- eval-for-selected-lines doesn't work with rectangular selection
+- how to handle S+0-9?
+- if start is at the end of a line, .* always matches an empty string
+- formatting problems in user's guide in table cells
+- finish persistent splits code
+- switching option panes real fast
+- failed saves should not clear the dirty flag
+- get rid of final blank page of user's guide
+- aborts not always fired
+- globalColors setting:
+  - tree controls, file system browser icons, tool bar icons look a bit
+    ugly with different backgrounds
+  - help viewer looks ugly
+  - selected borders in list, tree, table wrong colors
+  - updateUI doesn't update tree colors
+  - restart should not be necessary for 'globalColors' to take effect
+- evalutate for selected lines: > 1 selection per line
+- undo: redo doesn't clear dirty flag if necessary
+- BrowserView.reloadDirectory(): hardcoded design decisions
+- lower case all user's guide ids
+- C+e , and . insert , and . in the buffer
