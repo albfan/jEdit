@@ -1,0 +1,61 @@
+<!-- jEdit buffer-local properties: -->
+<!-- :indentSize=1:noTabs=true: -->
+<!-- :xml.root=users-guide.xml: -->
+
+<appendix id="globs"><title>Glob Patterns</title>
+ <para>
+  jEdit uses glob patterns similar to those in the various
+  Unix shells to implement file name filters in the file system browser.
+  Glob patterns resemble regular expressions somewhat,
+  but have a much simpler
+  syntax. The following character sequences have special meaning within a glob
+  pattern:
+ </para>
+ <itemizedlist>
+  <listitem><para><literal>?</literal> matches any one character</para></listitem>
+  <listitem><para><literal>*</literal> matches any number of characters</para></listitem>
+  <listitem><para><literal>{!<replaceable>glob</replaceable>}</literal>
+  Matches anything that does <emphasis>not</emphasis> match
+  <replaceable>glob</replaceable></para></listitem>
+  <listitem><para><literal>{<replaceable>a</replaceable>,<replaceable>b</replaceable>,<replaceable>c</replaceable>}</literal>
+  matches any one of <replaceable>a</replaceable>, <replaceable>b</replaceable> or
+  <replaceable>c</replaceable></para></listitem>
+  <listitem><para><literal>[<replaceable>abc</replaceable>]</literal> matches
+  any character in
+  the set <replaceable>a</replaceable>, <replaceable>b</replaceable> or
+  <replaceable>c</replaceable></para></listitem>
+  <listitem><para><literal>[^<replaceable>abc</replaceable>]</literal> matches
+  any character not
+  in the set <replaceable>a</replaceable>, <replaceable>b</replaceable> or
+  <replaceable>c</replaceable></para></listitem>
+  <listitem><para><literal>[<replaceable>a-z</replaceable>]</literal> matches
+  any character in the
+  range <replaceable>a</replaceable> to <replaceable>z</replaceable>, inclusive.
+  A leading or trailing dash will be interpreted literally</para></listitem>
+ </itemizedlist>
+ <para>
+  In addition to the above, a number of java.util.regex <quote>character class
+  metacharacters</quote> may be used, but their usefulness is limited since the regex quantifier metacharacters (asterisk, questionmark, and curly brackets) are redefined to mean something else in glob language.
+</para>  
+ <itemizedlist>
+  <listitem><para><literal>\w</literal> matches any alphanumeric
+  character</para></listitem>
+  <listitem><para><literal>\s</literal> matches a space or horizontal tab</para></listitem>
+  <listitem><para><literal>\d</literal> matches a decimal digit</para></listitem>
+  <listitem><para><literal>\S</literal> matches a non-space, non-control character</para></listitem>
+ </itemizedlist>
+ <para>
+  Here are some examples of glob patterns:
+ </para>
+ <itemizedlist>
+  <listitem><para><userinput>*</userinput> - all files.</para></listitem>
+  <listitem><para><userinput>*.java</userinput> - all files whose names end with
+  <quote>.java</quote>.</para></listitem>
+  <listitem><para><userinput>*.[ch]</userinput> - all files whose names end
+  with either
+  <quote>.c</quote> or <quote>.h</quote>.</para></listitem>
+  <listitem><para><userinput>[^#]*</userinput> - all files whose names do not
+  start with <quote>#</quote>.</para></listitem>
+ </itemizedlist>
+</appendix>
+

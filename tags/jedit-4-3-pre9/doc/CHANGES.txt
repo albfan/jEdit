@@ -1,0 +1,1411 @@
+JEDIT 4.3 VERSION HISTORY
+
+{{{ Version 4.3pre9
+
+Thanks to Björn "Vampire" Kautler, Akber Choudhry, Matthieu Casanova
+Jean-Francois Larvoire, Martin Raspe, Kazutoshi Satoda, Alan Ezust, Marcelo
+Vanzin, and Nicholas O'Leary for contributing to this release.
+
+{{{ Bug Fixes
+
+- avoid NPE from getIndentRules (patch # 1611766) (Kazutoshi Satoda)
+
+- bufferio operations are now exception-safe (patch# 1597168) (Kazutoshi Satoda)
+
+- Encoding errors properly reported on save (patch# 1601830) (Kazutoshi Satoda)
+
+- Filter Box lose focus bug (patch # 1608948) (kuljc)
+
+- Fixed the broken quick copy behaviour (Björn "Vampire" Kautler)
+
+- Fixed the wrong text in SearchAndReplace Dialog (bug #1592529)
+  (Björn "Vampire" Kautler)
+
+- Fixed wrong highlighting of multiline strings in cobol editmode
+  (bug #785290) (Björn "Vampire" Kautler)
+
+- Plugins in plugins options are now sorted case-insentively
+  (bug #1593410) (Matthieu Casanova)
+
+- Fixed the not resolved IMPORTs in IMPORTs (bug #1569735)
+  (Björn "Vampire" Kautler)
+
+- Fix SF Bug #1596756: Annoying problem with file system browser in 4.3pre7
+  When reopening the "recent" files on startup, a buffer might fail to
+  load (because, e.g., it's on a FTP server and the user canceled the
+  password dialog). So ignore the buffer if it's null when restoring the
+  view. (Marcelo Vanzin)
+
+- Fix SF Bug #1590250: Bad EOF handling code in CBzip2InputStream
+  The code seems to have other error handling problems, but at least
+  now it doesn't compare a char to -1. It would be interesting to see
+  what happens if we have a corrupted jar file... (Marcelo Vanzin)
+
+- Fix SF Bug #1571752: 'Add Explicit Fold' in PHP mode - wrong comments
+  Be smarter when inserting explicit folds in mode boundaries by trying
+  harder to use the comment characters for the mode of the text that
+  is being wrapped. Also do some tweaking for when to insert new lines
+  and when not to. (Marcelo Vanzin)
+
+- Fix SF Bug #1594910: Indentation of Javascript embedded in HTML is broken
+  The fix is more generic than what the bug suggest. The indent rules
+  were being kept locally by each buffer, and reflected the "top level"
+  mode's rules. So rules for sections of the buffer that were delegated
+  to other modes were ignored. The fix keeps the indent rules in the mode
+  instance, and the buffers retrieve the context-sensitive rules when
+  applying auto-indentation. (Marcelo Vanzin)
+
+- When deactivating a plugin if the VFS Browser was open but it's menubar
+  disabled, a NPE occured (#1593392) (Matthieu Casanova)
+
+- Fixed a bug I introduced with the new HASH_CHAR handling
+  (bug #1600380) (Björn "Vampire" Kautler)
+
+- Fixed another bug with the new HASH_CHAR handling
+  (bug #1600401) (Björn "Vampire" Kautler)
+
+- Fixed precedence of Recent Files List caretposition over commandline
+  supplied caret position (Björn "Vampire" Kautler)
+
+- SearchMatcher in SearchAndReplace cannot match empty Strings anymore
+  (#1601718) (Matthieu Casanova)
+
+- If you use two stage save and your file is writeable but in a	 folder
+  where you cannot write, a dialog will ask you if you want to save using
+  normal method (#1609303) (Matthieu Casanova)
+
+- Fixed that ESCAPE sequence of RULES tag couldn't appear at the beginning
+  of a rule. Now this is possible. Also added documentation about the
+  ESCAPE attribute. (Björn "Vampire" Kautler)
+
+- Hypersearch now report occurences count and line count (#1565447)
+  (Matthieu Casanova)
+
+- Several exceptions fixed in plugin manager after update or remove plugins
+  (Matthieu Casanova)
+
+- When simplified keyboard handling was off, typing Alt+F o to open
+  a file, the o was also written in the textarea. (#1593359) (Matthieu Casanova)
+
+- VariableGridLayout resized Components to sizes bigger than their maximum size,
+  now it resizes it only up to its maximum size and positions the Components
+  according to their alignmentX/alignmentY values if the cell is bigger than
+  the Component's size. (Björn "Vampire" Kautler)
+
+- Horizontal scrollbar in the textarea was not always updated
+  (#1534016, #1617483) (Matthieu Casanova)
+
+- In hypersearch when switching to flat nodes, the full path is displayed
+  correctly (#1593523) (Matthieu Casanova)
+
+- The VFS Browser filter was not working as expected
+  (#1617509) (Matthieu Casanova)
+
+- When reloading a buffer, the markers were not saved for each EditPanes
+  (Matthieu Casanova)
+
+- When closing an untitled buffer is is removed from the CaretInfo map
+  of the EditPanes (Matthieu Casanova)
+
+- When a buffer is renamed the key is changed in the CaretInfo map
+  of the EditPanes (Matthieu Casanova)
+
+- Memory tooltip in status bar reports wrong values (#1538051) (Matthieu Casanova)
+
+- Better handling of plugin optional dependencies (Matthieu Casanova)
+
+- Fixed some cursor changes when dragging the dockable panel split bar
+  (Matthieu Casanova)
+}}}
+
+{{{ Editing
+
+- New edit mode: quake.xml
+
+- Updated TCL edit mode (Jean-Francois Larvoire)
+
+- Updated Lilypond edit mode (Bertalan Fodor)
+
+- Fixed some invalid mode files (Björn "Vampire" Kautler)
+
+- Updated some mode files that were still in jEdit 4.0 syntax (Björn "Vampire" Kautler)
+
+- Perl edit mode - support for fully qualified variable names like $Some::Module::test.
+  (Martin Raspe)
+
+- Updated python edit mode to unindent lines after "pass" (Matthieu Casanova)
+
+- Better highlighting of function calls in makefiles. (Marcelo Vanzin)
+}}}
+{{{ Miscellaneous
+
+- BufferSwitcher has a hovertip to give you full filename
+  (request # 1628053) (Alan Ezust)
+
+- Textfield for filtering recent files menu (Patch # 1546200)
+  (Joerg - spj)
+
+- FSB deletes directories recursively now
+  (bug #1593389) (patch #1593900) (Akber Choudhry)
+
+- Added a FIRST_LINE_GLOB to the "awk" mode in modes catalog (fr #1582241)
+  (Björn "Vampire" Kautler)
+
+- Incremental searchbar now use the invalid syntax color to show if the searched
+  text was found (Matthieu Casanova)
+
+- FR #1599024: add a submenu to the file menu that allows reloading the
+  current buffer with a specific encoding.
+
+- HASH_CHAR in mode-files is now optional and multicharacter
+  (Björn "Vampire" Kautler)
+
+- HASH_CHARS got invented for mode-files as alternative to HASH_CHAR,
+  whereby HASH_CHARS lists possible first characters of the matched
+  result literally (Björn "Vampire" Kautler)
+
+- Fixed some wrong documentation and added some new
+  about HASH_CHAR and HASH_CHARS (Björn "Vampire" Kautler)
+
+- SplashScreen change : more step added for progress bar and it tells now
+  what jEdit is doing (Matthieu Casanova)
+
+- When closing the current buffer, if there is only one buffer, untitled and
+  not dirty it is not closed (not needed since another one would be created)
+  (Matthieu Casanova)
+
+- The Files change dialog has now an ignore button to set the
+  autoreload and autoreloaddialog flags to false (Matthieu Casanova)
+
+- VariableGridLayout, two new capabilities: it can
+  take minimum and maximum sizes of a Component into account when
+  distributing free space and you can supply distances to the borders
+  of the Container. The new capabilites are useable by the two new
+  constructors. For more information, see the JavaDoc documentation.
+  (Björn "Vampire" Kautler)
+
+- Reload/ReloadAll now ignores buffers with the NEW_FILE flag set. This
+  was causing IO error messages when the Untitled buffers could not
+  be reloaded. (Nicholas O'Leary)
+
+- More infos about the socket connection when the plugin manager updates it's
+  plugin list (Matthieu Casanova)
+
+- Now the multiple selection and rectangular selection flags are saved
+  for each buffer on each edit pane. So you can now in a textarea edit
+  a buffer using rectangular selection, and use normal selection with another one
+   (Matthieu Casanova)
+
+- Option panes are now in a JSCrollPane (feature #1593735) (Matthieu Casanova)
+
+- New option for the File System Manager : use default icons.
+  If you uncheck the checkbox, some customs icons can be used.
+  At this time only local file system have custom icons (feature #1593464)
+  (Matthieu Casanova)
+
+- Buffer saving is now buffered, it changes everything with large files
+  (Matthieu Casanova)
+
+- jEdit can now use continuous layout in it's JSplitPane.
+  You can change this option in the Appearance panel (#1638642)
+  (Matthieu Casanova)
+
+- The update panel of the plugin manager now shows the installed version
+  and the version existing on the plugin central server (Matthieu Casanova)
+}}}
+{{{ API Changes
+
+- Refactored the manually implemented HashSet of LinkedLists to use the
+  Java Collections HashSet and ArrayList. Therefore the ParserRule.next
+  and the ParserRuleSet.getRules(char) got deprecated in favor of
+  ParserRuleSet.getRules(Character) (Björn "Vampire" Kautler)
+
+- Deprecated JEditBuffer.isElectricKey(char).
+  Added JEditBuffer.isElectricKey(char, int) to replace it.
+  (Marcelo Vanzin)
+
+- Deprecated some of the ParserRule.createXXX() methods which accepted
+  only one character HASH_CHAR, while introduced new ones that accept
+  whole Strings. Additionally new ones for accepting HASH_CHARS got
+  added. (Björn "Vampire" Kautler)
+
+- SearchDialog.preloadSearchDialog(View) is deprecated, this is
+  not necessary on our big computers and JVM with JIT (Matthieu Casanova)
+
+- VariableGridLayout has two new constructors to use the new capabilites.
+  For more information see section Miscellaneous. (Björn "Vampire" Kautler)
+
+- PluginManager.getPluginList() is not public anymore. It was not useful
+  since the PluginList class cannot be accessed outside of it's package
+  (Matthieu Casanova)
+
+- MiscUtilities.moveFile(File, File) is deprecated, use
+  IOUtilities.moveFile(File, File) instead (Matthieu Casanova)
+
+- Plugin API : now the EditPlugin has two new methods :
+  EditPlugin.getPluginHome() that will returns the path where the plugin
+  should write it's data (it can return null if you run with nosettings).
+  It is a folder build like that
+  jEditSettingsDirectory/plugins/pluginClassName
+  ex :
+  ~/.jedit/plugins/sidekick.SidekickPlugin
+  I hope this will help to make some cleanup in the jEdit settings directory folder
+  (this folder is not created by jEdit, plugin developpers must create it themselves)
+  The second method is EditPlugin.usePluginHome()
+  that plugin developpers should overload to tell jEdit if they use this new folder
+  The default is false (Matthieu Casanova)
+
+- VFSFile.getIcon() and VFSFile.getDefaultIcon(). The getIcon() method
+  can be override to use a custom icon for some VFS (Matthieu Casanova)
+
+- Added org.gjt.sp.jedit.msg.PropertiesChanging; an EditBus message that is
+  sent right before the global options dialog is show, to allow plugins to
+  flush any data that might be used by the option panes.
+  (Marcelo Vanzin)
+
+- OptionsDialog.init(String,String) was made protected (was private).
+  (Marcelo Vanzin)
+
+- New GUIUtilities.initContinuousLayout(JSplitPane) method that will
+  init the JSplitPane with the appearance.continuousLayout property.
+  It can be used by plugins that has JSplitPane when receiving a PropertiesChanged
+}}}
+
+}}}
+
+{{{ Version 4.3pre8
+
+Thanks to Matthieu Casanova, Martin Raspe, Marcelo Vanzin, Alan Ezust
+and Björn "Vampire" Kautler for contributing to this release.
+
+{{{ Bug Fixes
+
+- Fixed the impossibility to ReplaceAndFind if matching "$"
+  (Björn "Vampire" Kautler)
+
+- Fixed incorrect highlighting if in soft-wrap and rectangular selection
+  mode if drag highlighting with the mouse. (bug #1589360)
+  (Björn "Vampire" Kautler)
+
+- Fix SF Bug #1574562: 4.3pre7 regex find/replace fails
+  When adjusting the offset after an EOL match, need to check whether
+  the new value is larger than the end of the search region and break
+  the loop. (Marcelo Vanzin)
+
+- When having a single word selected, join line was doing nothing.
+  (#1575505) (Matthieu Casanova)
+
+- Filters in the VFS Browser were not applied on Windows (#1571629)
+  (Martin Raspe)
+
+- Fix SF Bug #1585327: Perl mode curly brackets highlighting and matching broken
+  There was a broken rule in perl.xml. (Marcelo Vanzin)
+
+- Fix SF Bug #1588002: Perl Mode - sub foo($) { broken
+  Correctly handle perl subroutine prototypes. (Marcelo Vanzin)
+
+}}}
+{{{ Miscellaneous
+
+- Buffer options were factored out to a dedicated BufferOptionPane and
+  moved to .options (Martin Raspe)
+
+- Automatic reloading of buffers without notification is now possible.
+  The autoreload behaviour can now be set individually for each buffer
+  on the buffer option pane. Autoreload settings for open buffers are now
+  saved to and restored from "perspective.xml" (#1578785) (Martin Raspe)
+
+- VFS browser column headers now have little arrow icons indicating the
+  sorted column and sort direction. Clicking on the "Type" column header
+  now sorts the files by extension (Martin Raspe)
+
+- When the plugin manager fail to download a plugin or to read the downloaded
+  file, a new message dialog suggest the user to try another mirror
+  (Matthieu Casanova)
+
+- ToggleHeaderSource.bsh (macros/C) now will find and open an already-open
+  buffer with the correct filename even if it is from another directory.
+  (Alan Ezust)
+
+}}}
+{{{ API Changes
+
+- OptionsDialog - currentPane and paneTree are protected now,
+  to make it easier to extend it in SideKick plugin. (Alan Ezust)
+
+}}}
+
+}}}
+
+{{{ Version 4.3pre7
+
+Thanks to Matthieu Casanova, Marcelo Vanzin, Nicholas O'Leary,
+Marcin Orlowski, Martin Raspe, Kazutoshi Satoda, Alan Ezust,
+and Björn "Vampire" Kautler for contributing to this release.
+
+{{{ API Changes
+
+  {{{ EditAction changes:
+
+- Instances now inherit a protected Object[] args;
+  Added a convenience function invoke(View view, Object[] newArgs) which
+  sets args and calls invoke(view). Sf.net feature request # 1548301.
+
+- Made getCode() concrete (before it was abstract) and added
+  a sensible implementation so that people extending from it
+  are no longer required to write a function that returns beanshell code
+  as long as they override the invoke(View) method with valid Java code.
+  (Alan Ezust)
+
+- Made getLabel() non-final, so that people can override it and make
+  more interesting EditActions. If args is set, getLabel() uses them
+  for the label. (Alan Ezust)
+
+  }}}
+  {{{ GUIUtilities changes:
+
+- Added GUIUtilities.loadMenuItem(EditAction, boolean) - calls
+  EditAction.getLabel() to get the label instead of getting properties
+  directly (Alan Ezust)
+
+- GUIUtilities.addSizeSaver(Frame parent, String name) changed to
+  GUIUtilities.addSizeSaver(Frame frame, Container parent, String name)
+  and refactored to use saveGeometry(). Saves/restores
+  sizes relative to a parent container. if parent==null, behaves
+  as before. (Björn "Vampire" Kautler)
+
+  }}}
+  {{{ PluginJAR changes
+
+- jEdit.getPlugin(className, bool) now will search for and
+  load plugins that were not yet loaded, given a className to search
+  for. (Alan Ezust)
+
+- added PluginJAR.findPlugin() which is used by the above method (Alan Ezust).
+
+- added PluginJAR.load(), formerly a private method moved
+  from the ManagePanel class. Also moved transitiveClosure() into
+  the PluginJAR class. General refactoring to make the
+  plugin management code more centrally located. (Alan Ezust)
+
+  }}}
+
+- added new class org.gjt.sp.jedit.bufferio.MarkersSaveRequest; fixed 1527419:
+  Setting or deleting markers does not dirty buffer anymore. Handling of
+  the markers file is now factored out from BufferSaveRequest.
+  (Martin Raspe)
+
+- added SearchMatcher.isMatchingEOL(); indicates whether the matched
+  region ends at an EOL character. Part of bug fix for SF Bug #1541009.
+  (Marcelo Vanzin)
+
+- added new class org.gjt.sp.jedit.io.VFSFileFilter; an interface that
+  defines a filter used by the VFS browser. (Marcelo Vanzin)
+
+- added VFSBrowser.addVFSFileFilter() and VFSBrowser.getVFSFileFilter().
+  Deprecated VFSBrowser.getFilenameFilter(). (Marcelo Vanzin)
+
+- added VFS._listDirectory(Object,String,VFSFileFilter,boolean,Component,boolean,boolean)
+  (Marcelo Vanzin)
+
+- moved MiscUtilities.globToRE() to StandardUtilities. (Marcelo Vanzin)
+
+- added org.gjt.sp.util.PropertiesBean. See javadoc for details.
+  (Marcelo Vanzin)
+
+- added JEditTextArea.collapseFold(int line) to collapse the fold at the
+  given line (Matthieu Casanova)
+
+- New method KillRing.setInstance() that allow you to replace the default KillRing.
+  jEdit now uses a custom KillRing : JEditKillRing. The only difference is that it
+  can save itself to the disk (Matthieu Casanova)
+}}}
+{{{ Syntax Highlighting
+
+- Interlis mode updated to version 2.3 (patch # 1464779)
+
+- Progress mode supports nested comments (patch# 1211534)
+
+- New edit mode: Pilrc *rcp mode by Marcin Orlowski (#1519983)
+
+- Perl.xml mode fixes: (#1549412, #1020484), infinite loops in regexp,
+  transliteration and hash highlighting, added several new features
+
+}}}
+{{{ Bug Fixes
+
+- JEditTextArea now supports Java Input Methods. See
+    http://java.sun.com/j2se/1.5.0/docs/guide/imf/index.html
+    (#735962, #1555403) (Kazutoshi Satoda)
+
+- Plugin Manager: fixed some bugs about broken or missing behaviour
+  + toggle behaviour of spacebar (bug #1538700)
+  + closing behaviour of enter if in list (bug #1538695)
+  + disposing behaviour of ESC (bug #1538693)
+  + broken/weird focus behaviour (bug #1538692)
+  + now keeps selection if you cancel the installation or an I/O-Error
+    occures while installing or updating (bug #1538689)
+  + selection and checked state of plugins is now remembered if going to
+    other tabpanes or to the settings (feature request #974759)
+  + Install and Update Panels support now multiple selections too
+  (Björn "Vampire" Kautler)
+
+- Plugin Manager: Automatically loads unloaded dependent plugins.
+    (#1538702) (Alan Ezust)
+
+- File System Browser now recognizes Backspace, DEL and F2 to
+  go to parent dir, delete and rename files respectively.
+  The "path:" textarea accepts environment variables and expands them too.
+  (1542365) (Alan Ezust)
+
+- SplashScreen is now in the middle of the screen, instead of between
+  2 screens (Alan Ezust)
+
+- GuiUtilities.load/save geometry now saves x and y coordinates
+  relative to the parent component. Changed core to make dialogs
+  and floating dockables pop up in a place relative to the parent
+  view.  (#1292706) (Alan Ezust)
+
+- Memory dialog reports wrong values (#1538051) (Matthieu Casanova)
+
+- Shortcut sorting was broken (#1538452) (Matthieu Casanova)
+
+- Actions to-lower and to-upper now selects the word at caret if
+  there is no selection (#1538720) (Matthieu Casanova)
+
+- Quicklist of dockables windows is now sorted (#1538728)
+  (Matthieu Casanova)
+
+- Updated text in Search dialog to reflect reality (#1542029)
+  (Nicholas O'Leary)
+
+- SF Bug #1541009: 4.3pre6 regexp find: hangs + huge memory waste
+  "$" matches right before the end of line; so we need to adjust the end
+  of the matched region when that is used. To do this and still maintain
+  the expected replace behavior, a new method was added to
+  SearchMatcher, and users of that class should adjust the offsets of
+  subsequent searches when an EOL is matched. (Marcelo Vanzin)
+
+- Formatting an empty paragraph do not throw a StringIndexOutOfBoundsException
+  anymore (#1548902) (Matthieu Casanova)
+
+- Clearing a register is now persistent (#1541821) (Matthieu Casanova)
+
+- When collapsing a fold, if the caret is inside, it
+  is moved to the first line of the fold (#1541372) (Matthieu Casanova)
+
+- action collapse-fold now works fine even if the caret is not on the
+  first line of the fold (#1538712) (Matthieu Casanova)
+
+- When saving a readonly buffer it will ask you if you want a two stage save.
+  If you say no it will not display any error dialog anymore.
+  (#1549282) (Matthieu Casanova)
+
+- ArrayOutOfBoundException fixed in VFS browser when choosing to delete, rename
+  or browse in right click popupmenu when no file are selected
+  (#1565286) (Matthieu Casanova)
+
+}}}
+{{{ Miscellaneous
+
+- VFS browser is now able to sort files by double-clicking on column headers.
+  Files can be sorted by name, size and last modification date. Clicking again on
+  the same column header will reverse the sort order (#1442812) (Martin Raspe)
+
+- VFS browser is not restricted to the built-in "glob" filter anymore.
+  Plugins can register new filters to be used by the browser by
+  implementing the "VFSFileFilter" interface and providing a service
+  entry in service.xml, or by directly calling
+  VFSBrowser.addVFSFileFilter(). (Marcelo Vanzin)
+
+- Updated FAQ for jEdit 4.3 (ezust)
+
+- Save and Backup Option Panel : the backup directory has now a button to browse using
+  VFS file browser (#1540730) (Matthieu Casanova)
+
+
+- The PluginManager options do not allow anymore to ask for a mirror list update
+  twice (Matthieu Casanova)
+
+- The mirror list of the plugin manager is now stored in a file : mirrorList.xml
+  and read from here where you open the option panel. The Update mirror list button
+  will refresh it from the web.
+  (Matthieu Casanova)
+
+}}}
+
+}}}
+
+{{{ Version 4.3pre6
+
+Thanks to Björn "Vampire" Kautler, Alan Ezust,
+Matthieu Casanova, Nicholas O'Leary, Ollie Rutherfurd, and
+Marcelo Vanzin for contributing to this release.
+
+{{{ API Changes
+- MiscUtilities.getEncodings(boolean getSelected) added
+  to get only the user-chosen encodings, e. g. in encoding dialogs.
+  getEncodings() is deprecated in favor of getEncodings(false).
+  (Björn "Vampire" Kautler)
+
+- DockableWindowManager.closeListener(String dockableName) - a new
+  convenience method for creating keyboard listeners for floating
+  dockables to respond to the "close-current-area" action. (Alan Ezust)
+
+- GUIUtilities.addSizeSaver(Frame frame, String name) added to
+  save a Frames size and position correctly, even if it gets
+  maximized.  (Björn "Vampire" Kautler)
+
+- EditPane.setBuffer(final Buffer buffer, boolean requestFocus) that allow
+  to set a buffer without requesting the focus (default is to request focus)
+  (Matthieu Casanova)
+
+- BufferHistory.clear() to clear the recent file list
+  (Matthieu Casanova)
+
+- MiscUtilities.stringCompare() and MiscUtilities.CompareString are moved to
+  StandardUtilities (Matthieu Casanova)
+
+- Added XMLUtilities class for XML-related utility methods. Move some
+  methods from MiscUtilities to this class, and deprecate the old ones.
+  (Marcelo Vanzin)
+
+- Moved MiscUtilities.objectsEqual() method to StandardUtilities()
+  (Matthieu Casanova)
+
+
+}}}
+{{{ Miscellaneous
+
+- Ability to clear the Recent Files List from menu (Matthieu Casanova)
+
+- Beanshell 2.0b4 bundled (Matthieu Casanova)
+
+- Added an OptionPane "Encodings" to select which encodings to
+  show in encoding dialogs.  (Björn "Vampire" Kautler)
+
+- Improved DockableWindowManager.closeCurrentArea() - closes more
+  docked dockables than it did before. (Alan Ezust)
+
+- Fixed the storing of Frame size and position
+  if the Frame gets maximized. (bug #1325358)
+  (Björn "Vampire" Kautler)
+
+- Fixed VFS.copy() method when the returned session is null
+  (Matthieu Casanova)
+
+- When adding explicit folds, and using a line comment for the end line,
+  insert a line break after the fold end if the line is not empty,
+  avoiding commenting out existing code. (Marcelo Vanzin)
+
+- Added option to not print collapsed folds. (Nicholas O'Leary)
+
+- Added paste and clear buttons to the Registers dockable.
+  (Nicholas O'Leary)
+
+- The behavior of JARClassLoader now is different than in previous
+  versions of jEdit. JARClassLoader will now delegate class loading
+  to the parent class loader before looking in its cache. This means
+  that, by default, plugins can't override classes in the JVM's
+  boot classpath. The behavior is configurable on a per-plugin
+  basis (see javadoc for details). This fixes SF Bug #1509218.
+  (Marcelo Vanzin)
+
+- SF Bug #1527824: Perl Syntax Highlighting hangs 4.3pre6
+  More activity on my favorite edit mode. :-)
+  The [^\p{Alpha}\p{Space}] rule at the start of Perl's "y/.../" syntax
+  was not entirely correct; some other characters, mainly operators like
+  +, -, etc, and also underscore, are not allowed either. But since the
+  regexp was still trying to be matched against such strings, it would
+  have two effects: a very long pause (the "hang"), and strings like
+  "y_something_something" being highlighted incorrectly. By adding a few
+  extra characters to that exclusion, things seem to be much better.
+  (Marcelo Vanzin)
+
+}}}
+{{{ Bug Fixes
+
+- (jedit-Bugs-1518537) FSB keyboard handling bugs fixed.
+  Arrow keys, backspace, and return all do sensible things
+  from the table as well as the list view. (Ezust)
+
+- (jedit-bugs 1533925) Alpha-numerics are no longer being "passed through"
+  from the FSB to the editpane.  (Alan Ezust)
+
+- When multiple views are open, closing a buffer will not change the active view
+  (Bug #1518400) (Matthieu Casanova)
+
+- Fixed Untitled buffer added to the Recent file list (Bug #1518620)
+  (Matthieu Casanova)
+
+- MiscUtilities.canonPath() now trim redundant / and \ at the end of the path
+  of Dos derived OS (bug that can be seen when typing some / in the end of the
+  path field of VFS browser) (Matthieu Casanova)
+
+- SF bug 1526487: ArrayOutOfBoundException in VFS Browser. (Matthieu Casanova)
+
+- SF bug 1519237: Regular Expression Search in 4.3pre5
+  regexp search should be done with Pattern.MULTILINE enabled, otherwise
+  ^ and $ will only match the start and end of the buffer. (Marcelo Vanzin)
+
+- SF bug 1517395: Wrong character encoding in killring.xml
+  fix bug in Java 1.5 by saving ASCII control characters as character
+  entities; since 1.4 doesn't support XML 1.1, if killring.xml has
+  character entities it will fail (so the bug will still be there
+  when running on 1.4). (Marcelo Vanzin)
+
+- SF bug 1523261: "Regular expression " and "Ignore case"
+  There was a stray "flags" variable in PatternSearchMatcher.nextMatch()
+  that was clobbering the instance variable with the same name (that
+  actually contained the needed flags for the compiled pattern).
+  (Marcelo Vanzin)
+
+- SF bug 1523117: Add explicit fold in PHP mode inserts wrong comments
+  The "DEF_CLASS" rule set in the php mode file didn't have any line
+  or range comments declared in the props section; so the code was now
+  picking up the porperties for the default rule set, which had the
+  HTML-style range comment instead of the PHP line comment. This is
+  probably due to the XML parser change - the old code was probably
+  propagating some property of another rule set to the DEF_CLASS rule
+  set, since it used global variables for a bunch of things. So this
+  might show up in other places, and might need a better fix...
+  (Marcelo Vanzin)
+
+- SF bug 1524032: Line number not highlighted when the line is selected
+  (Nicholas O'Leary)
+
+- SF bug 1524155: replace all within selection doesn't give feedback
+  (Nicholas O'Leary)
+
+- SF bug 1524191: s() method from startup.bsh doesn't work
+  (Nicholas O'Leary)
+
+- SF bug 1516994: Fixed infinite recursion possibility
+   in ManagePanel.java when unloading certain plugins
+   with circular dependencies due to services. (Alan Ezust)
+
+- No exception thrown when adding an explicit fold to a read only buffer.
+  (#1549282) (Matthieu Casanova)
+
+- Deep indent fixed when using tabs (Matthieu Casanova)
+}}}
+{{{ Syntax Highlighting
+- Added mysql mode.
+- Added django templates mode. (Ollie Rutherfurd)
+}}}
+}}}
+
+{{{ Version 4.3pre5
+
+Thanks to Alan Ezust, Jeffrey Hoyt, Daniel Hahler, Dale Anson,
+Björn "Vampire" Kautler, Matthieu Casanova, Xuân Baldauf,
+Nicholas O'Leary and Marcelo Vanzin for contributing to this release.
+
+{{{ Reinstall required
+- Gnu.regexp is no longer used by jEdit, in favor of java.util.regex
+  Since the regexp removal has also affected the modes handling and thus
+  the files in the "modes" directory, just updating "jedit.jar" of an
+  existing jEdit installation does not suffice. You would get weird
+  errors in this case. Thus, a full reinstall is required.
+}}}
+{{{ Keyboard handling changes
+- There is a new option, "simplified keyboard handling"
+  under "general options" to switch between two keyboard handling modes.
+  Keyboard event workaround handling has been substantially changed (as
+  a fix to bug 1488047). This may greatly affect the way your keys work.
+  Please report any bugs regarding this (and please drop a note about
+  this bug in bug 1488047).
+  (Xuân Baldauf).
+}}}
+{{{ API Changes
+
+- DockableWindowManager has a new method, setDockableTitle()
+  which allows you to set the string in the title bar
+  for floating dockables. Now docked buttons use the dockableName.label
+  property instead of the .title. This way, we can have have long titles
+  in the floater, and short strings on the dock button. (Alan Ezust)
+
+- Macros.Macro.invoke() has been rewritten to begin the compoundEdit on the buffer that is
+  active buffer before the macro gets invoked, and end the compoundEdit on the buffer that is active
+  after the macro is invoked opposed to end the compoundEdit on the buffer it was started on.
+  JEditTextArea.setBuffer() has been rewritten to end a compoundEdit on the old buffer and start
+  a new compoundEdit on the new buffer if there were a compoundEdit in progress.
+  (bug #1469996).   (Björn "Vampire" Kautler )
+
+- New class: org.gjt.sp.jedit.msg.CaretChanging, for alerting
+  other plugins that the caret position is about to change.
+  This allows Navigator to be alerted of sidekick selections. (Alan
+  Ezust)
+
+- MiscUtilities.isBinaryFile() method that will check if a file is binary or not (Matthieu Casanova)
+
+- MiscUtilities.autodetect() this method tries to autodetect the file encoding. It was moved
+  from BufferIORequest (Matthieu Casanova)
+
+- New utility class : IOUtilities that will contains static IO methods that
+  depends only on JDK. (Matthieu Casanova)
+
+- New utility class : StandardUtilities that will contains static
+  methods that depends only on JDK (Matthieu Casanova)
+
+- jEditBuffer.getRegexProperty() has been removed;
+  jEditBuffer.getPatternProperty() was added to replace it.
+  (Marcelo Vanzin)
+
+- MiscUtilities.quickSort() methods and MiscUtilities.Compare class are now deprecated
+	use Arrays.sort() and Collections.sort() (Matthieu Casanova)
+
+- MiscUtilities.parseXML() and MiscUtilities.findEntity() were added.
+  They're mainly used internally to ease XML parsing, but can safely
+  be used by other people. Please refer to the javadoc documentation
+  about how these methods operate. (Marcelo Vanzin)
+
+- org.gjt.sp.jedit.search.RESearchMatcher has been removed as part
+  of the gnu.regexp removal; it didn't make sense to write extra
+  code to keep that class working. (Marcelo Vanzin)
+
+- due to the change to support java.util.regex, the signature for
+  org.gjt.sp.jedit.search.SearchMatcher.nextMatch() has changed.
+  This means that any plugin that uses SearchMatcher or one of its
+  implementations directly will break. (Marcelo Vanzin)
+
+- Added Log.log(urgency, source, message, exception). (Xuân Baldauf)
+
+}}}
+{{{ Miscellaneous
+- SearchReplace dialog now supports additional options,
+  for Directory Search: "skipHidden" and "skipBinary".
+  Now you can skip over hidden directories/files, as well
+  as binary files. (Matthieu Casanova & Alan Ezust)
+
+- Updated Ruby Edit-mode to v0.6.2
+  The Ruby-Mode now highlights numbers correctly (bug #1489847). (Björn "Vampire" Kautler)
+
+- The "Recent files" menu can now be reaches with the keystroke sequence
+  "Alt+F F" (bug 1488066) (Xuân Baldauf)
+
+- The "Recent files" menu displays pathname information in the status
+  line now also in cases the keyboard is used to choose menu items
+  (bug 1488060) (Xuân Baldauf)
+
+- Drag&Drop now accepts multiple files in KDE environment. (bug 1487647)
+  (Xuân Baldauf)
+
+- Mode_Switcher macro fixed to stop InvocationTargetException
+  (Nicholas O'Leary)
+
+- Add explicit fold when start and end of selection are in different edit mode
+  (bug #1159659) (Matthieu Casanova)
+
+- Caret position of previously edited files is restored on startup (bug # 1486706)
+  (Dale Anson)
+
+- When saving a file with .gz extension the buffer is gzipped (it was not working when using two stage save.)
+  It also remove GZIPPED property if the buffer name was ending with .gz and is not anymore
+  (Matthieu Casanova)
+
+- All classes using the gnu.regexp packages have been changed to use
+  java.util.regexp. This needed some refactoring of a few components
+  inside the syntax highlighting and search subsystems. This means
+  that mode files using regexps and searches now should use the
+  java.util.regex syntax instead of the old syntax.
+  (Marcelo Vanzin)
+
+- All classes using the com.microstar.xml packages have been changed to
+  use JAXP to parse XML. Which means that some classes have different
+  base classes now, but I don't expect anyone to be inheriting from any
+  of those. Also, this means that XML parsing will be a little bit more
+  "correct" now, in the sense that it will check the files against their
+  DTDs (this needed some changes to the DTDs shipped with jEdit since
+  some of them had errors). (Marcelo Vanzin)
+
+- The build.xml got rebuilt to allow building the MacOS-Plugin on any platform
+  and to make it easier to build the distribution files (DEB, Java-Installer,
+  Mac OS X DMG, TGZ Slackware Package, Windows-Installer, SRC-package, PDF-Manuals).
+  (Björn "Vampire" Kautler)
+}}}
+}}}
+
+{{{ Version 4.3pre4
+
+Thanks to Neil Bertram, Onur Turgay, Ollie Rutherfurd, Dale Anson, Xuân Balduf,
+Nathan Blair, Peter Adolphs, Carmine Lucarelli, Matthieu Casanova, Alan Ezust,
+Daniel Hahler, Marcello Vanzin, Slava Pestov, Björn "Vampire" Kautler, and Jeffrey Hoyt for
+contributing to this release.
+
+{{{ Syntax Highlighting
+
+- TypoScript syntax highlighting (Neil Bertram).
+- Myghty template syntax highlighting (Ollie Rutherfurd)
+- JavaCC syntax highlighting (Dale Anson)
+
+}}}
+{{{ API Changes
+
+- better fix for 1449909:
+   Create a new message (ViewUpdate.ACTIVATED) to indicate that a different
+   view was activated. (Marcello Vanzin)
+
+- send a ViewUpdate.EDIT_PANE_CHANGED when changing the active view.
+    (Marcello Vanzin)
+
+- EditAction now has a setName() method, allowing one to change the name.
+
+- New BufferChanging class, extends EditPaneUpdate with a getBuffer()
+  method which returns the about-to-be opened buffer. (Alan Ezust)
+
+}}}
+{{{ Miscellaneous
+
+
+- TextAreaTransferHandler patch 1487647 Drag 'n' drop from KDE now works. (Xuân Baldauf)
+
+- GUIUtilities patch 1275607 for "find" dialog (Xuân Baldauf)
+
+- GUIUtilities patch 1467821 for dual-head displays applied (Nathan Blair)
+
+- patch 1467311 applied (Peter Adolphs) Restore previously open files on startup
+
+- Macro list is now sorted so that directories show up first
+  (carmine.lucarelli)
+
+- jEdit now supports LCD Subpixel Anti-Aliasing (JDK 1.6 only).
+  Global Options -> TextArea -> Anti-Aliased Smooth Text -> Subpixel
+  (Onur Turgay / Alan Ezust)
+
+- jEdit will ask for confirmation before overwriting read only files.
+  If yes, it will activate two stage save if the VFS is capable of
+  renaming files. If no, the file will not be saved (Matthieu Casanova).
+
+-IO progress monitor are indeterminate if the maximum value of the WorkThread is 0
+ (Matthieu Casanova)
+
+-Hyper search result panel now indicates the processed files
+ (Matthieu Casanova)
+
+}}}
+{{{ Bug Fixes
+
+- Fix a deadlock when using directory search (Slava Pestov).
+
+-Deep indent was broken since 4.3pre2 and is now fixed (Matthieu Casanova)
+
+}}}
+
+}}}
+
+{{{ Version 4.3pre3
+
+Thanks to Bertalan Fodor, Björn "Vampire" Kautler, David Chan, James Turk,
+Loren Charnley, Matthieu Casanova, Michael Macnair, Nicholas O'Leary,
+Alan Ezust, Slava Pestov, Ollie Rutherfurd, Jeffrey Hoyt, Marcelo Vanzin,
+Rob (copy_paste), and Simon Ruggier for contributing to this release.
+
+
+{{{ Search and Replace
+
+- HyperSearch results can now be displayed in a folder hierarchy tree
+  view. This makes it easier to see file locations when there are matches
+  for many different files from a deep folder structure. To activate,
+  right click on the top search node in the result tree and select
+  "Toggle Tree View". If multiple results is enabled, the tree view is
+  only toggled for the selected search.
+
+  There are also new context menu options for the result tree
+  that only display in tree view mode when a folder node is selected.
+  There are options to expand/collapse all child nodes, and another to
+  exeucte a "New Search From Here", which displays the search dialog
+  initialized with the path from the selected result tree folder node.
+
+}}}
+{{{ Syntax Highlighting
+
+- Gnuplot syntax highlighting (Loren Charnley).
+
+- Updated PHP syntax highlighting (Matthieu Casanova).
+
+- Fixed end token of heredoc that must start at beginning of the line in
+  PHP (Matthieu Casanova)
+
+- Updated MIPS R2000 assembly syntax highlighting (James Turk).
+
+- Updated Java and LaTeX syntax highlighting (Alexander Klimetschek).
+
+}}}
+{{{ File System Browser
+
+- Pressing / and BACKSPACE in the filename field no longer does
+  completion. Now, you must press TAB to complete.
+
+}}}
+{{{ Miscellaneous
+
+- JARClassLoader now reports package information (Bertalan Fodor).
+
+- A new macro, SplitPane grow, was added to the macros/interface
+  directory. (Alan Ezust)
+
+- A new macro, ToggleHeaderSource, for C/C++ editing.  (alan ezust)
+
+- A single-line selection no longer hides the line highlight, for
+  better readability.
+
+- The selection is now saved between buffer switches.
+
+- ActionContext now remembers overridden actions, so another plugin
+  can override builtin actions (via listing one in actions.xml with the same name).
+  When the plugin is unloaded, the original action will be restored. (alan ezust)
+  plugins that use this feature: infoviewer, xsearch, and optional.
+
+- Updated "Display Abbreviations", "Hex Convert" and "HyperSearch
+  Results to Buffer" macros.
+
+- Updated "Insert Buffer Properties" macro (Björn "Vampire" Kautler).
+
+- The plugin manager option pane now displays the name of the mirror
+  currently used (Matthieu Casanova).
+
+- URLs dragged into the textarea are loaded rather than the URL pasted
+  (Nicholas O'Leary).
+
+- Deselecting a plugin in the Plugin Manager persists between reloads of
+  jEdit (Nicholas O'Leary).
+
+- Help Browser has an improved history model with drop-down style
+  forward and back buttons.
+
+- Can specify caret column number in addition to line number when
+  opening a file (+line:<line>,<column>) (Bertalan Fodor).
+
+- Added a new EventListener to notify subscribing plugins when jEdit was
+  looking for prefix completions and when it was done. These
+  notifications are for the ShortcutDisplay plugin.
+
+}}}
+{{{ Bug Fixes
+
+- The following Java code did not indent properly:
+
+  if(foo)
+  {
+      foo(bar,
+          baz);
+  }
+
+- The following Java code did not indent properly:
+
+  foo(bar(
+          <--- should not have two levels of indent here
+
+- The soft wrap state is no longer reset when a buffer is saved. This
+  was pointless and slowed down the editor.
+
+- Screen line management had an off-by-one error, so in some situations
+  the vertical scroll bar state would become inconsistent.
+
+- Registers dockable window had a few problems (Nicholas O'Leary).
+
+- Word count would show -1 for an empty buffer (Michael Macnair).
+
+- Fixed corrupted cursor image problem on Mac OS X.
+
+- Complete word popup is now always positioned within the screen bounds.
+
+- The last physical line index was not updated when saving files
+  sometimes, resulting in exceptions when clicking in the text area.
+
+- If rectangular selection mode was enabled and you clicked beyond the
+  end of the line in a read-only buffer, jEdit would beep.
+
+- Using 'Delete Lines' with folding could mess up the vertical scroll
+  bar.
+
+- File system browser's right click menu now contains the "Plugins" menu
+  (Nicholas O'Leary).
+
+- Fixed file system browser's left arrow key behavior (David Chan).
+
+- The startup script created by the Java-based installer on Mac OS X now
+  adds the Cocoa classes to jEdit's class path, so the Mac OS plugin
+  should work with no further tweaking.
+
+- Fix race condition when there were buffers in the perspective, as well
+  as buffers specified to open on the command line.
+
+- If windows were docked in the top docking area, the action bar would
+  display in the wrong place.
+
+- After receiving a PropertiesChanged on EditBus, the PluginManager will
+  check if the mirror was changed before updating the plugin list
+  (Matthieu Casanova).
+
+- Fix for drag'n'copy text to lower position in same textarea - #1246823
+  (Nicholas O'Leary)
+
+- Register Viewer fixes (Nicholas O'Leary).
+
+- Bug 1173630 fixed : Format paragraph with the caret at the end of it
+  (Matthieu Casanova).
+
+- Mixed parser rules are detected when adding explicit fold
+  (Matthieu Casanova).
+
+- Bug 1085135 fixed : when typing ctrl+S jEdit will not ask the user if
+  he wants to override the read only flag on the file
+  (Matthieu Casanova)
+
+- NPE fixed when removing hyper search result that aren't cached
+(Matthieu Casanova)
+
+- NPE fixed when using turkish locale (889520)
+
+}}}
+{{{ API Changes
+
+- bug  1386702: DockableWindowManager now sends an EditBus message
+        DockableWindowUpdate.ACTIVATED when a dockable is activated.
+        And a corresponding DEACTIVATED message when it is deactivated. (alan ezust)
+
+-  A new EditBus message has been introduced: EditPaneUpdate.CHANGING
+        for Navigator (or other EBPlugins) to catch caret positions
+        just before buffers are changed.  (Alan ezust)
+
+-  A new EditBus message has been introduced: BufferUpdate.CLOSING
+        for EBPlugins to catch events just before buffers are closed.
+		(Alan ezust)
+
+- Selecting multiple directories in the file chooser dialog box is now
+  supported; just pass true as the last parameter (Matthieu Casanova):
+
+  GUIUtilities.showVFSFileDialog(view,null,
+    VFSBrowser.CHOOSE_DIRECTORY_DIALOG,true)
+
+- Now that the text area is independent of the rest of jEdit, various
+  text area-related APIs that used to take org.gjt.sp.jedit.Buffer
+  instances now take org.gjt.sp.jedit.buffer.JEditBuffers:
+
+  - BufferChangeListener and BufferChangeAdapter are now deprecated. Use
+    BufferListener instead.
+
+  - FoldHandler.getFoldLevel() now takes a JEditBuffer as a parameter.
+
+  - VFS.copy() methods added (Matthieu Casanova).
+
+  - MiscUtilities.copyStream() and MiscUtilities.closeQuietly() methods
+    added (Matthieu Casanova).
+
+}}}
+
+}}}
+
+{{{ Version 4.3pre2
+
+Thanks to Bertalan Fodor, Dirk Moebius. Jarek Tuszynski, Joshua Gertzen,
+Nicholas O'Leary, and Simon Ruggier for contributing to this release.
+
+{{{ Auto Indent
+
+- The auto indent engine has been rewritten from scratch to provide
+  more accurate indentation for a variety of languages, including Java,
+  Common Lisp, and Factor.
+
+- Aligned bracket indent is done as before with "indentOpenBrackets" and
+  "indentCloseBrackets" properties. Unaligned indent was previously
+  enabled by setting "lineUpClosingBrackets" to "false". Now, you must
+  specify "unalignedOpenBrackets" and "unalignedCloseBrackets"
+  properties.
+
+  The upside is that both aligned and unaligned indent can be used in
+  the same edit mode. For example, in Java source, the following piece
+  of code is indented correctly:
+
+  public void apply(Buffer buffer, int thisLineIndex,
+          int prevLineIndex, int prevPrevLineIndex,
+          List indentActions)
+  {
+          // ...
+  }
+
+- The new "unindentThisLine" property, whose value is a regexp, allows
+  indentation of Java switch/case constructs:
+
+  switch(foo) {
+  case bar:
+          hello();
+  default:
+          yo();
+  }
+
+- In order to immediately re-indent the line as soon as the case or
+  default statement is terminated with a :, the "electricKeys" property
+  is set to a list of characters whose input triggers a re-indent of the
+  current line.
+
+- The new "unindentNextLines" property, whose value is a regexp,  allows
+  indentation of Factor colon definitions -- in particular, after the ;
+  everything must be unindented:
+
+  : refers? ( to obj -- ? )
+      f swap [ pick eq? or ] each-slot nip ;
+  ! Indent returns here
+
+}}}
+{{{ Syntax Highlighting
+
+- Updated LilyPond syntax highlighting (Bertalan Fodor).
+
+- Rd syntax highlighting (Jarek Tuszynski).
+
+- Updated ASP syntax highlighting (Simon Ruggier).
+
+- Slate (http://slate.tunes.org) syntax highlighting.
+
+}}}
+{{{ File System Browser
+
+- The file system now lazily retreives file system attributes. For
+  plugins that use the VFS API, this has important implications; see
+  the below "API Changes" section. (Joshua Gertzen).
+
+- Previously, file system browser columns would resize to fit all the
+  attributes of all visible files. Now, this is not possible, so instead
+  columns can be resized manually and their size is preserved.
+
+}}}
+{{{ Miscellaneous
+
+- When an item from the "Paste Previous" or "Paste Deleted" dialog boxes
+  is inserted, it is moved to the top of the list.
+
+- Pasting now preserves the tall caret.
+
+- New text areas viewing a buffer inherit the fold visibility map from a
+  previous text area.
+
+- The right-click popup for HyperSearch results nodes has three new
+  entries:
+
+  - Open
+  - Open in New View
+  - Open in New Plain View
+  - Open in New Split
+
+- On Mac OS X, the close box is shown with a different appearance if a
+  visible buffer has unsaved changes.
+
+- Dropping text into the text area now selects it (Nicholas O'Leary).
+
+- The cursor is hidden when you start typing.
+
+- Renamed 'Delete Line' to 'Delete Lines'; now does the right thing if
+  more than one line is selected. Same for 'Join Lines' versus
+  'Join Line'.
+
+- When the search bar loses focus, the currently entered text is added
+  to the history.
+
+- "Format Paragraph" now preserves the caret position.
+
+}}}
+{{{ Bug Fixes
+
+- Fix NullPointerException in file system roots list.
+
+- Search and replace dialog's "Search subdirectories" checkbox did not
+  have an Alt-key mnemonic.
+
+- Binding actions to numeric keypad keys should now work better.
+
+- Pressing something like A+f l where A+f was a prefix but A+f l was
+  not bound would insert l into the buffer, which was undesirable.
+
+- The plugin manager did not select a plugin's dependencies when the
+  plugin was selected for installation.
+
+- Invoking 'Expand Fold' when the fold is expanded would move the caret
+  to the wrong place.
+
+- Changing the wrap mode didn't update screen line counts, causing
+  various problems.
+
+- The custom history text field border with the popup widget is back.
+
+- Fixed a memory leak. Token markers were retaining the line segment
+  they were given to tokenize -- in some cases, this line segment could
+  hang around for a while, and was huge.
+
+- Fix performance regression when deleting text; too many lines were
+  being repainted.
+
+- 'Cut Append' and 'Copy Append' commands did not update the Registers
+  dockable.
+
+- Fix Control key on Mac OS X.
+
+- Changing the font size did not update the vertical scrollbar.
+
+- JSwat plugin did not work when running under Java 5 due to a bug in
+  jEdit's JARClassLoader (Dirk Moebius).
+
+- Fix some problems with paths that end with multiple file separators.
+
+- Inserting a long line of text did not always scroll horizontally as
+  required.
+
+- Split panes now have resize weight, ensuring more intuitive behavior
+  when a split view is resized.
+
+- If autosave kicked in while the 'Close All Buffers' dialog was open,
+  then the perspective would be saved, and the wrong buffer would be
+  restored on the next startup.
+
+- Fix an exception from being shown when loading a file with a malformed
+  .marks file.
+
+- Fix possible ArrayIndexOutOfBoundsException when deleting text after
+  decreasing the number of history elements.
+
+- Double clicking the middle mouse button now pastes twice, instead of
+  pasting and selecting a word.
+
+}}}
+{{{ API Changes
+
+- View.updateTitle() is now public.
+
+- VFS.DirectoryEntry has been deprecated because its interface is not
+  conductive to lazy initialization. Virtual file systems should now
+  return instances of org.gjt.sp.jedit.io.VFSFile, and instead of
+  reading/writing the public fields of that class (they are public but
+  deprecated for VFS.DirectoryEntry compatibility), you should call the
+  accessor/mutator methods.
+
+- A new MiscUtilities.pathsEqual() method has been added to check for
+  equality of path names while ignoring case sensitivity on Windows.
+
+}}}
+
+}}}
+
+{{{ Version 4.3pre1
+
+Thanks to Cameron Morrison, Igor Lesik, Jim Lawton, Marcelo Vanzin,
+Nicholas O'Leary and Trevor Harmon for contributing to this release.
+
+{{{ Search and Replace
+
+- When invoking "Find", "Incremental Search for Word" or "HyperSearch
+  for Word" actions, if regular expression search is on, any special
+  characters in the selection are automatically escaped.
+
+- Find dialog box now has fields that accept multi-line input. Pressing
+  ENTER activates the "Find" button; press C+ENTER to insert lines in
+  the field.
+
+- Variables such as "view", "buffer" and "textArea" can now be used from
+  BeanShell replace expressions.
+
+}}}
+{{{ Syntax Highlighting
+
+- Literate Haskell syntax highlighting (Cameron Morrison).
+
+- Updated D syntax highlighting (Jim Lawton).
+
+- Forth syntax highlighting.
+
+- Motorola 68000 assembler syntax highlighting (Igor Lesik).
+
+}}}
+{{{ Scripting
+
+- Macros written in the UTF-8Y and UTF-16 encodings are auto-detected.
+
+- Added Macros->Repeat Last Macro command. This used to be in 4.1, but
+  got removed in 4.2, and now its back due to popular demand.
+
+}}}
+{{{ Miscellaneous
+
+- jEdit no longer runs with Java 2 version 1.3. Java 2 version 1.4 or
+  1.5 is now required.
+
+- If the wrap margin is set to 0 and soft wrap is enabled, wrapping is
+  now performed at the text area width. This used to be in 4.1, but
+  got removed in 4.2, and now its back due to popular demand.
+
+- Rename Autosave & Backup option pane to Save & Backup, move some
+  options from General pane there (Marcelo Vanzin).
+
+- Added Ant target for building a MacOS X .app package (Trevor Harmon).
+
+- Added Register and Marker dockables (Nicholas O'Leary).
+
+- "Rectangular Selection" command now changes the state of the current
+  selection to match the flag.
+
+- "Select All" preserves current scroll position.
+
+- When closing jEdit, open buffers are not added to the "Recent Files"
+  list if the "Restore previously open files on startup" option is on.
+
+- View.goToBuffer() will try to find a non-zero height text area if
+  possible.
+
+- Pressing TAB now preserves the tall caret, if there is one.
+
+- When a directory is reloaded, it is no longer moved to the top of the
+  file system browser's history list.
+
+- Added View->Splitting->Restore Split action -- it recreates a
+  split pane configuration as it was before the most recent 'Unsplit'.
+
+}}}
+{{{ Bug Fixes
+
+- "Backup directory" feature now works if the file being edited is on a
+  different filesystem than the backup directory (Marcelo Vanzin).
+
+- Don't use two-stage save if the file's parent directory is not
+  writeable (Marcelo Vanzin).
+
+- Minor fix for handling of the recent buffer when the current buffer
+  was closed.
+
+- Fix StringIndexOutOfBoundsException when opening files with a
+  malformed XML PI.
+
+- Removing open files from the favorites list didn't work.
+
+- calling readNextChar() no longer clears the status bar after the
+  script returns.
+
+- Fix potential ArrayIndexOutOfBoundsException when indenting lines
+  containing unmatched brackets.
+
+- The "deselecting this plugin will deselect dependencies" message did
+  not give the actual list of dependencies.
+
+- Fixed NullPointerException when selecting QuickNotepad menu items
+  before opening QuickNotepad first.
+
+- Register persistence was broken and didn't work in many cases.
+
+}}}
+{{{ API Changes
+
+- New org.gjt.sp.jedit.gui.HistoryTextArea class can be used by
+  plugins.
+
+- Removed EditPlugin.JAR, deprecated since 4.2.
+
+- Removed Buffer.getRootElements(), Buffer.getParagraphElement() and
+  Buffer.getDefaultRootElement() methods, deprecated since jEdit 4.0.
+
+}}}
+
+}}}
+
+jEdit buffer local properties:
+:maxLineLen=80:indentSize=2:
+:folding=explicit:collapseFolds=2:
