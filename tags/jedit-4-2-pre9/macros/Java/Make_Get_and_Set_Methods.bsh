@@ -1,0 +1,152 @@
+/**
+Make_Get_and_Set_Functions.bsh - a BeanShell macro for
+the jEdit text editor  that creates simple get() and set()
+methods for the variables on selected lines.
+
+Copyright (C)  2004 Thomas Galvin - software@thomas-galvin.com
+based on Make_Get_and_Set_Methods.bsh by John Gellene
+
+This macro will work on multiple selected lines; for instance, 
+selecting
+
+<code>
+public int foo;
+public int bar;
+</code>
+
+and running the macro will produce get and set functions for both
+variables, along with comments.  This macro produces c-style 
+functions, unless the buffer is in java mode.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+*/
+
+boolean JAVA_MODE = buffer.getMode().getName().equals("java");
+
+String getFunctionText(String text)
+{
+  if( text != null && !text.equals("") )
+  {
+    text = text.trim();
+    if( text.endsWith(";") )
+    {
+      text = text.substring( 0, text.length() -1 );
+    }
+    
+    StringTokenizer tokenizer = new StringTokenizer(text);
+    int tokenCount = tokenizer.countTokens();
+    if(tokenCount >= 2)
+    {
+      int numGarbage = tokenCount - 2;
+      for (int i = 0; i < numGarbage; i++)
+      {
+        tokenizer.nextToken();
+      }
+      
+      String type = tokenizer.nextToken();
+      String variable = tokenizer.nextToken();
+      String uppperVariable = Character.toUpperCase(variable.charAt(0)) + variable.substring(1, variable.length());
+      String setVariable;
+      if(JAVA_MODE)
+      {
+        setVariable = variable;
+      }
+      else
+      {
+        setVariable = type + "Value";
+      }
+      
+      if(JAVA_MODE)
+      {
+        text = "\n" + 
+        "/**\n" + 
+        "Function: get" + uppperVariable + "()\n" +
+        "Returns the value of " + variable + ".\n" + 
+        "*/\n" + 
+        "public " + type + " get" + uppperVariable + "()" + "\n" +
+        "{" + "\n" + 
+          "  return " + variable + ";" + "\n" + 
+        "}" + 
+        "\n\n" + 
+        
+        "/**\n" + 
+        "Function: set" + uppperVariable + "()\n" +
+        "Sets the value of " + variable + ".\n" + 
+        "@param " + setVariable + " The value to assign " + variable + ".\n" +
+        "*/\n" + 
+        "public void set" + uppperVariable + "(" + type + " " + setVariable + ")\n" + 
+        "{" + "\n" + 
+          "  this." + variable + " = " + setVariable + ";" + "\n" +
+        "}" + "\n";
+      }
+      else
+      {
+        text = "\n" + 
+        "/*\n" + 
+        "function: get" + uppperVariable + "()\n" +
+        "Returns the value of " + variable + ".\n" + 
+        "*/\n" + 
+        "public " + type + " get" + uppperVariable + "()" + "\n" +
+        "{" + "\n" + 
+          "  return " + variable + ";" + "\n" + 
+        "}" + 
+        "\n\n" + 
+        
+        "/*\n" + 
+        "function: set" + uppperVariable + "()\n" +
+        "Sets the value of " + variable + ".\n" + 
+        "Input: " + setVariable + " The value to assign " + variable + ".\n" +
+        "*/\n" + 
+        "public void set" + uppperVariable + "(" + type + " " + setVariable + ")\n" + 
+        "{" + "\n" + 
+          "  " + variable + " = " + setVariable + ";" + "\n" +
+        "}" + "\n";
+      }
+      
+      return text;
+    }
+  }
+  
+  return "";
+}
+
+void parseSelection()
+{
+  int selectionStart = textArea.getSelectionStart();
+  int selectionEnd = textArea.getSelectionEnd();
+  
+  textArea.setCaretPosition(selectionStart);
+  int startLine = textArea.getCaretLine();
+  
+  textArea.setCaretPosition(selectionEnd);
+  int endLine = textArea.getCaretLine();
+  
+  StringBuffer code = new StringBuffer();
+  
+  for(int i = startLine; i <= endLine; i++)
+  {
+    String lineText = textArea.getLineText(i);
+    String tmp = getFunctionText(lineText);
+    if(tmp != null && tmp.compareTo("") != 0)
+    {
+      code.append(tmp);
+    }
+  }
+  
+  textArea.setCaretPosition(selectionEnd);
+  textArea.setSelectedText(code.toString());
+  
+  textArea.setCaretPosition(selectionEnd);
+  textArea.moveCaretPosition(selectionEnd + code.length(), true);
+  textArea.indentSelectedLines();
+}
+
+parseSelection();
