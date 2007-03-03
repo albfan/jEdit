@@ -1,0 +1,135 @@
+﻿TO DO
+
+Note that this is not a complete to do list. It mostly only lists bugs
+and quirks that I need to fix eventually.
+
+- test keyboard completion with expanded/collapsed tree
+- teset keyboard completion with high latency VFS
+- file system browser: 2 clicks don't hide menus in jdk 1.5
+- file system browser: tigten gap on left of tool bar
+- option to disable context menu
+- plugin mgr inspection of not-loaded plugins
+- history text field tweak
+- optional dependencies
+- tall caret and tab
+- need timeouts for plugin manager list download.
+- in search bar, C+y a doesn't work
+- printing: check default printer setting
+- vfs updates still broken
+- "downloading plugin list" label in plugin manager
+- column reference counting broken
+- new file: horiz scroll wrong
+- enter after a fold broken *AGAIN*
+- fsb default size
+
++ docs:
+
+- add note that regexp matching does not cross newlines in token marker
+- add note to documentation about exponential-time regexps
+- news: deep indent, action bar, new cli options
+- action bar
+- document deep indent
+- quicknotepad help needs to be generated
+- note about dependencies
+- help:
+  - titles in search are fucked
+- sidebars: need a border or some sort
+- user's guide:
+  - part III
+    - describe alternative ways to obtain buffers, edit panes, text areas,
+      in a sidebar about changing them
+- examples of EOL_SPAN_REGEXP matching in docs
+- plugin tutorial:
+  - plugin build environment docs
+  - auto-created actions
+  - link to jEdit devel page
+  - quicknotepad class -- links to API docs
+  - functions - links to API docs
+  - quicknotepad docs
+- plugin tips and techniques:
+  - common. properties, using properties for UI strings
+  - cutting down on startup time
+  - canned dialog boxes in GUIUtilities
+  - tools.jar
+  - string comparison in MiscUtilities
+  - writing a macro handler
+  - writing a fold handler
+  - OperatingSystem class
+  - option groups
+  - listening for buffer changes
+  - canned controls:
+    animated icon, color well button, enhanced dialog,
+    font selector, history text field, 
+    jcheckboxlist, rolloverbutton,
+    variablegridlayout
+  - displaying a help viewer
+  - canned icons
+  - vfs implementation
+  - running stuff in i/o threads
+  - multi-threaded i/o
+  - jeditresource: protocol
+  - getting line syntax info, textutilities.getTokenAtOffset()
+  - text area extensions
+  - text area caret & scroll listeners
+  - status bar messages & readNextChar()
+- vfs javadoc: invokeAndWait() example for createVFSSession()
+
++ obscure:
+
+- no need to wait for requests after newFile()
+- class loading problems
+- motif l&f: shortcuts in menu items
+- some JLists do not auto-scroll on keystroke
+- C+b -- click -- keys don't work
+- how to handle S+0-9?
+- clean up VFSManager.errorOccurred() -vs- BufferIORequest.ERROR_OCCURRED
+- auto indent: don't de-indent on enter if no leading indent at all?
+- remove-marker, select-next/prev-marker/bracket
+- gzip & unicode, or gzip & <?xml encoding...
+- new macro handler api
+- invoking action bar command twice
+- backup time distance setting
+- if A depends on B but A is loaded before B and B breaks, A ends up
+  being loaded. Solution: load plugins in order of dependencies?
+- expand fold: try to expand even if already expanded
+- format -- instead of \n\n, what if it has \n   \n?
+- C+ENTER 3 C+2
+- tall caret and tab
+- don't show 'new directory' in favorites:
+- auto indent:
+  if(foo)
+    while(bar)
+    {
+      //
+    }
+  <--- cursor here
+
++ performance:
+
+- closing lots of files is slow -- esp. with close all dialog box!
+- menu drag: slow
+- bracket matching: no delay for current line match??
+- final optimization for OffsetManager: scan to zero or scan to end
+- do buffer load AWT half immediately after work thread half
+- replace all in a directory could be faster
+- buffer.setMode() slow
+- eliminate redundant scans and events when loading buffer
+- make vfs listing faster
+- don't repaint whole selection when resizing
+- could make non-soft wrap chunk merge even faster!
+- syntax SPAN::END substitution: String --> char[] --> String
+- is getScreenLineOfOffset() called often?
+- if caret is at the end of a buffer when doing a replace all, a lot of
+  repaint() and getLineOfOffset() calls are made
+- optimize for no folding & no soft wrap case:
+  - reset() and changed() don't need to scan
+  - scroll/physUp/Down() simpler
+- inserting lines repaints whole text area
+- see if getLineOfOffset() can be optimized
+- optimize 1 long line case
+- two repaints in line insert
+- redundant calls to recalculateLastPhysicalLines()/updateScrollBars()
+- redundant updateChunksUpTo() calls
+
+jEdit buffer local properties:
+:wrap=hard:maxLineLen=72:indentSize=2:
