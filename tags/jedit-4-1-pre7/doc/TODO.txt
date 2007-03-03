@@ -1,0 +1,116 @@
+TO DO
+
+Note that this is not a complete to do list. It mostly only lists bugs
+and quirks that I need to fix eventually.
+
+- wheel mouse page scroll w/ soft wrap
+- S+ENTER in fsb for directories
+- left arrow in filename field
+- if A depends on B but A is loaded before B and B breaks, A ends up
+  being loaded. Solution: load plugins in order of dependencies?
+- A+# on OS X, need better modifier mapping on OS X
+- change indentPrevLine to indentOneLine and indentSubsequentLines
+- rect select and trailing whitespace
+- scrolling horizontally when dragging into virtual space: a bit quirky
+- eval-for-selected-lines doesn't work with rectangular selection
+- focus problem with hypersearch in floating window
+- plugin manager: install plugins, no restart, install another: deps bad
+- plugin deps need JAR name, not plugin name
+- first focus: show all files that were modified on disk, in a list
+- support multi-screen systems properly
+  - windows need to be created on the same screen as their parent if
+    possible.
+  - setLocationRelativeTo(): ok
+  - loadGeometry(): bad
+  - dockable windows
+  - getCenterPoint()
+  - popup menus
+- maximisation state bug: open window, resize to size X. close window,
+  open window again, resize to size Y. maximise. close window, open
+  window again, it has size X not size Y.
+- C+ENTER 1 ...
+- fs browser: scroll to visible after setting divider location
+- expand fold: try to expand even if already expanded
+- openFile(): can open two copies of the same buffer if a) remote b)
+  canonPath != path
+- recording 'evaluate for selected lines'
+- how to handle S+0-9?
+- aborts not always fired
+- globalColors setting:
+  - help viewer looks ugly
+  - selected borders in list, tree, table wrong colors
+- evalutate for selected lines: > 1 selection per line
+- undo: redo doesn't clear dirty flag if necessary
+- C+e , and . insert , and . in the buffer, ditto for [ and ]
+- motif l&f: shortcuts in menu items
+- fix pg up/down with soft wrap
+- finish roots: hack on Windows
+
++ verify:
+
+- line 2112 -- isNarrowed() check of moveCaretPosition()
+- searching in a buffer w/ narrowed fold
+- sometimes trying to extend a selection creates one all the way to the
+  end of the buffer
+- narrow to one line: select all: blows up
+- dwm: not always focused correctly
+- JDK 1.4 focus bugs
+- if loadMode() throws error, save of a mode file fails?
+
+[error] AWT-EventQueue-0: Exception occurred during event dispatching:
+[error] AWT-EventQueue-0: java.lang.ClassCastException: javax.swing.JButton
+[error] AWT-EventQueue-0:       at
+org.gjt.sp.jedit.gui.PanelWindowContainer.show(PanelWindowContainer.java:200)
+
+  -- trying to show a non-existent dockable
+
++ cleanups:
+
+- clean up VFSManager.errorOccurred() -vs- BufferIORequest.ERROR_OCCURRED
+- BrowserView.reloadDirectory(): hardcoded design decisions
+- finish persistent splits code
+- custom stylesheet: no xmlns
+- NO_WORD_BREAK and NO_LINE_BREAK: need to think about this, is it worth
+  keeping INVALID? report errors in some other manner?
+- clean up the way macro hierarchy is stored
+- dialog parenting for fsb colors pane, vfs browser dialog
+- move text utility methods to TextUtilities
+- minor quicknotepad changes -- update docs
+- requestDefaultFocus() is bad
+
++ features:
+
+- close current area w/ dockables that don't implement
+  requestDefaultFocus()
+- add dockable window state change msg
+- range-comment & rect select
+- user's guide:
+  - vertical paste & rect select insertion
+  - mention whitespace eating word actions
+  - alternative tool bar placement
+  - ESCAPE hides search bar
+  - wheel mouse modifiers
+  - indentOnTab/Enter changes
+  - update shortcuts.xml
+- new tips:
+  - indentOnTab/Enter replacements
+  - smartHome replacements
+  - -float actions
+  - alt tool bar placement if not there already
+  - go to text area
+- support rect start in virtual space too
+
++ performance:
+
+- positions should be gapped too
+- try typing foo), put cursor after foo, type some more -- slowdown
+- eliminate redundant scans and events when loading buffer
+- make vfs listing faster
+- don't repaint whole selection when resizing
+- background tokens are slow
+- backward virtual line scan
+- do not call foldVisibilityManager.getLastVisibleLine() on every change
+  w/ soft wrap. kills performance if also narrowed
+- if caret is at the end of a buffer when doing a replace all, a lot of
+  repaint() and getLineOfOffset() calls are made, however this doesn't
+  seem to affect performance that much.

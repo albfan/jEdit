@@ -1,0 +1,18 @@
+/**
+	Read filename into the interpreter and evaluate it in the current
+	namespace.  Like the Bourne Shell "." command.
+*/
+
+bsh.help.source = "usage: source( filename | URL )";
+
+Object source( String filename ) {
+	return this.interpreter.source( filename, this.caller.namespace );
+}
+
+Object source( URL url ) {
+	return this.interpreter.eval( 
+		new InputStreamReader(url.openStream()), this.caller.namespace,  
+		"URL: "+url.toString()
+	);
+}
+
