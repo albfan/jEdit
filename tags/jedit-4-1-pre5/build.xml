@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+
+<!--
+     This is a build.xml file for building jEdit.
+-->
+
+<project name="jEdit" default="dist" basedir=".">
+
+	<target name="compile">
+		<javac
+			srcdir="."
+			deprecation="on"
+			includeJavaRuntime="yes"
+		>
+			<include name="bsh/**/*.java"/>
+			<include name="com/microstar/*.java"/>
+			<include name="com/incors/plaf/kunststoff/*.java"/>
+			<include name="gnu/regexp/*.java"/>
+			<include name="installer/*.java"/>
+			<include name="org/gjt/sp/jedit/**/*.java"/>
+			<include name="org/gjt/sp/util/*.java"/>
+		</javac>
+	</target>
+
+
+	<target name="dist" depends="compile">
+		<jar
+			jarfile="jedit.jar"
+			manifest="org/gjt/sp/jedit/jedit.manifest"
+		>
+			<fileset dir=".">
+				<include name="bsh/**/*.class"/>
+				<include name="bsh/commands/*.bsh"/>
+
+				<include name="com/microstar/*.class"/>
+				<include name="com/incors/plaf/kunststoff/*.class"/>
+				<include name="com/incors/plaf/kunststoff/icons/*.gif"/>
+				<include name="gnu/regexp/*.class"/>
+				<include name="gnu/regexp/MessagesBundle.properties"/>
+				<include name="javax/help/**/*.class"/>
+
+				<include name="org/gjt/sp/jedit/**/*.class"/>
+				<include name="org/gjt/sp/util/**/*.class"/>
+				<include name="org/gjt/sp/jedit/**/*.dtd"/>
+				<include name="org/gjt/sp/jedit/icons/*.gif"/>
+				<include name="org/gjt/sp/jedit/tips/*.html"/>
+				<include name="org/gjt/sp/jedit/*.props"/>
+
+				<include name="org/gjt/sp/jedit/actions.xml"/>
+				<include name="org/gjt/sp/jedit/default.abbrevs"/>
+				<include name="org/gjt/sp/jedit/jedit.bsh"/>
+
+				<include name="doc/*.txt"/>
+				<include name="doc/welcome.html"/>
+				<include name="doc/users-guide/*.html"/>
+				<include name="doc/users-guide/toc.xml"/>
+				<include name="doc/users-guide/word-index.xml"/>
+			</fileset>
+		</jar>
+	</target>
+
+	<!-- Generate docs with xsltproc tool from www.xmlsoft.org -->
+	<target name="docs-html-xsltproc">
+		<exec executable="xsltproc" dir="doc/users-guide">
+			<arg value="--catalogs"/>
+			<arg value="jedithtml.xsl"/>
+			<arg value="users-guide.xml"/>
+		</exec>
+	</target>
+
+	<!-- Generate docs with Xalan tool from xml.apache.org -->
+	<target name="docs-html-xalan">
+		<style
+			in="doc/users-guide/users-guide.xml"
+			destdir="doc/users-guide"
+			style="doc/users-guide/jedithtml.xsl"/>
+	</target>
+
+	<target name="clean">
+		<delete>
+			<fileset dir="." includes="**/*~" defaultexcludes="no"/>
+			<fileset dir="." includes="**/#*#" defaultexcludes="no"/>
+			<fileset dir="." includes="**/*.orig"/>
+			<fileset dir="." includes="**/*.rej"/>
+			<fileset dir="." includes="**/.*.swp"/>
+			<fileset dir="." includes="**/.#*"/>
+			<fileset dir="." includes="**/.new*"/>
+			<fileset dir="." includes="**/.directory"/>
+			<fileset dir=".">
+				<include name="**/*.class"/>
+				<exclude name="com/incors/plaf/kunststoff/*.class"/>
+				<exclude name="org/gjt/sp/jedit/textarea/TextRenderer2D.class"/>
+				<exclude name="bsh/XThis*.class"/>
+				<exclude name="bsh/reflect/ReflectManagerImpl.class"/>
+			</fileset>
+
+			<fileset dir="." includes="doc/users-guide/*.html"/>
+			<fileset dir="." includes="doc/users-guide/toc.xml"/>
+			<fileset dir="." includes="doc/users-guide/word-index.xml"/>
+
+			<fileset dir="." includes="doc/users-guide/*.pdf"/>
+			<fileset dir="." includes="doc/users-guide/*.aux"/>
+			<fileset dir="." includes="doc/users-guide/*.tex"/>
+			<fileset dir="." includes="doc/users-guide/*.log"/>
+
+			<fileset dir="." includes="installer/jedit-*"/>
+		</delete>
+	</target>
+
+</project>
