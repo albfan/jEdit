@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AntConfiguration">
+    <defaultAnt bundledAnt="true" />
+    <buildFile url="file://$PROJECT_DIR$/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/jars/LatestVersion/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/jars/QuickNotepad/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/../plugins/LucenePlugin/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/../plugins/MarkerSets/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/../plugins/BufferTabs/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/../plugins/MyDoggyPlugin/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/../plugins/ProjectViewer/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/../plugins/ErrorList/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/../plugins/InfoViewer/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="32" />
+      <properties />
+    </buildFile>
+  </component>
+  <component name="BuildJarProjectSettings">
+    <option name="BUILD_JARS_ON_MAKE" value="false" />
+  </component>
+  <component name="CodeStyleSettingsManager">
+    <option name="PER_PROJECT_SETTINGS">
+      <value>
+        <ADDITIONAL_INDENT_OPTIONS fileType="java">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="jsp">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="xml">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+      </value>
+    </option>
+  </component>
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions>
+      <entry name=".+\.(properties|xml|html|dtd|tld)" />
+      <entry name=".+\.(gif|png|jpeg|jpg)" />
+    </resourceExtensions>
+    <wildcardResourcePatterns>
+      <entry name="?*.properties" />
+      <entry name="?*.props" />
+      <entry name="?*.xml" />
+      <entry name="?*.gif" />
+      <entry name="?*.png" />
+      <entry name="?*.jpeg" />
+      <entry name="?*.jpg" />
+      <entry name="?*.html" />
+      <entry name="?*.dtd" />
+      <entry name="?*.tld" />
+      <entry name="?*.ftl" />
+    </wildcardResourcePatterns>
+    <annotationProcessing enabled="false" useClasspath="true" />
+  </component>
+  <component name="CopyrightManager" default="">
+    <module2copyright />
+  </component>
+  <component name="DependencyValidationManager">
+    <scope name="jEdit Sourcefiles" pattern="file[jEdit]:org//*.java" />
+    <scope name="Modes" pattern="file[jEdit]:modes//*.xml" />
+    <scope name="Macros" pattern="file[jEdit]:macros//*.bsh" />
+    <scope name="LatestVersion Sourcefiles" pattern="file[LatestVersion]:*.java" />
+    <scope name="MacOS Sourcefiles" pattern="file[MacOS]:macos//*.java" />
+    <scope name="QuickNotepad Sourcefiles" pattern="file[QuickNotepad]:*.java" />
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="EclipseCompilerSettings">
+    <option name="GENERATE_NO_WARNINGS" value="true" />
+    <option name="DEPRECATION" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="ISO-8859-1">
+    <file url="file://$PROJECT_DIR$/doc/CHANGES.txt" charset="ISO-8859-9" />
+  </component>
+  <component name="IdProvider" IDEtalkID="F2207F966C6969E072D5CD57D729D7EA" />
+  <component name="InspectionProjectProfileManager">
+    <profiles>
+      <profile version="1.0" is_locked="false">
+        <option name="myName" value="Project Default" />
+        <option name="myLocal" value="false" />
+        <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+          <option name="processCode" value="true" />
+          <option name="processLiterals" value="true" />
+          <option name="processComments" value="true" />
+        </inspection_tool>
+        <inspection_tool class="UnnecessaryLocalVariable" enabled="true" level="WARNING" enabled_by_default="true">
+          <option name="m_ignoreImmediatelyReturnedVariables" value="true" />
+          <option name="m_ignoreAnnotatedVariables" value="true" />
+        </inspection_tool>
+      </profile>
+    </profiles>
+    <option name="PROJECT_PROFILE" value="Project Default" />
+    <option name="USE_PROJECT_PROFILE" value="true" />
+    <version value="1.0" />
+  </component>
+  <component name="IssueNavigationConfiguration">
+    <option name="links">
+      <list>
+        <IssueNavigationLink>
+          <option name="issueRegexp" value="\d+" />
+          <option name="linkRegexp" value="http://sourceforge.net/support/tracker.php?aid=$0" />
+        </IssueNavigationLink>
+      </list>
+    </option>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" />
+    <option name="OPTION_SCOPE" value="protected" />
+    <option name="OPTION_HIERARCHY" value="true" />
+    <option name="OPTION_NAVIGATOR" value="true" />
+    <option name="OPTION_INDEX" value="true" />
+    <option name="OPTION_SEPARATE_INDEX" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
+    <option name="OPTION_DEPRECATED_LIST" value="true" />
+    <option name="OTHER_OPTIONS" value="" />
+    <option name="HEAP_SIZE" />
+    <option name="LOCALE" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+  </component>
+  <component name="Palette2">
+    <group name="Swing">
+      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+      </item>
+      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+      </item>
+      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+        <initial-values>
+          <property name="text" value="Button" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="RadioButton" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="CheckBox" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+        <initial-values>
+          <property name="text" value="Label" />
+        </initial-values>
+      </item>
+      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+          <preferred-size width="150" height="-1" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+          <preferred-size width="150" height="-1" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+          <preferred-size width="150" height="-1" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+          <preferred-size width="150" height="50" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+          <preferred-size width="200" height="200" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+          <preferred-size width="200" height="200" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+      </item>
+      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+      </item>
+      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+      </item>
+      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+          <preferred-size width="-1" height="20" />
+        </default-constraints>
+      </item>
+      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+      </item>
+      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+      </item>
+    </group>
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="jEdit" />
+  </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="kpouer">
+      <words>
+        <w>editpane</w>
+      </words>
+    </dictionary>
+  </component>
+  <component name="ProjectKey">
+    <option name="state" value="https://jedit.svn.sourceforge.net/svnroot/jedit/jEdit/trunk/jEdit.ipr" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../plugins/BufferTabs/BufferTabs.iml" filepath="$PROJECT_DIR$/../plugins/BufferTabs/BufferTabs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plugins/ErrorList/ErrorList.iml" filepath="$PROJECT_DIR$/../plugins/ErrorList/ErrorList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plugins/InfoViewer/InfoViewer.iml" filepath="$PROJECT_DIR$/../plugins/InfoViewer/InfoViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jars/LatestVersion/LatestVersion.iml" filepath="$PROJECT_DIR$/jars/LatestVersion/LatestVersion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plugins/LucenePlugin/LucenePlugin.iml" filepath="$PROJECT_DIR$/../plugins/LucenePlugin/LucenePlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jars/MacOS/MacOS.iml" filepath="$PROJECT_DIR$/jars/MacOS/MacOS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plugins/MarkerSets/MarkerSets.iml" filepath="$PROJECT_DIR$/../plugins/MarkerSets/MarkerSets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plugins/MyDoggyPlugin/MyDoggyPlugin.iml" filepath="$PROJECT_DIR$/../plugins/MyDoggyPlugin/MyDoggyPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../plugins/ProjectViewer/ProjectViewer.iml" filepath="$PROJECT_DIR$/../plugins/ProjectViewer/ProjectViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jars/QuickNotepad/QuickNotepad.iml" filepath="$PROJECT_DIR$/jars/QuickNotepad/QuickNotepad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jEdit.iml" filepath="$PROJECT_DIR$/jEdit.iml" />
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/idea" />
+  </component>
+  <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="jEdit" type="Application" factoryName="Application">
+      <log_file path="$PROJECT_DIR$/build/settings/activity.log" checked="true" skipped="false" show_all="false" alias="Activity Log" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="snapshooter" />
+      <option name="MAIN_CLASS_NAME" value="org.gjt.sp.jedit.jEdit" />
+      <option name="VM_PARAMETERS" value="-Xmx192M" />
+      <option name="PROGRAM_PARAMETERS" value="-settings=&quot;$PROJECT_DIR$/build/settings&quot;" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="jEdit" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="1341" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="JProfiler">
+        <option name="WINDOW" value="false" />
+        <option name="JVMPI" value="false" />
+        <option name="INTERPRETED" value="false" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="JProfiler" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build.xml" target="build" />
+        <option name="Make" enabled="false" />
+        <option name="Run Ant target" value="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ResourceManagerContainer">
+    <option name="myResourceBundles">
+      <value>
+        <list size="0" />
+      </value>
+    </option>
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/jEdit/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/jEdit/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/jEdit/branches" />
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/jEdit/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://jedit.svn.sourceforge.net/svnroot/jedit/jEdit/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../plugins/BufferTabs">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/BufferTabs/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/BufferTabs/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/BufferTabs/branches" />
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/BufferTabs/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/BufferTabs/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../plugins/ErrorList">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ErrorList/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ErrorList/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ErrorList/branches" />
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ErrorList/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ErrorList/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../plugins/InfoViewer">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/branches">
+                    <value>
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1166043764458" />
+                          <option name="revision" value="8225" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/branches/lucene" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1134870348000" />
+                          <option name="revision" value="1614" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/branches/InfoViewer_1_5_4" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="950818117000" />
+                          <option name="revision" value="1557" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/branches/InfoViewer" />
+                        </SvnBranchItem>
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags">
+                    <value>
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1156370044033" />
+                          <option name="revision" value="6724" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/release-1-5-9" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1152077407000" />
+                          <option name="revision" value="1634" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/release-1-5-8" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1147408428000" />
+                          <option name="revision" value="1624" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer-1-5-6" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1136438471000" />
+                          <option name="revision" value="1619" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/InfoViewer_1_5_5" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1131173506000" />
+                          <option name="revision" value="1609" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/InfoViewer_1_5_2" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1128642599000" />
+                          <option name="revision" value="1604" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer-1-51" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1128614357000" />
+                          <option name="revision" value="1596" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer-1-5" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1128377310000" />
+                          <option name="revision" value="1592" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer-1-3" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1046975638000" />
+                          <option name="revision" value="1583" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/iv_1_2" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1014591202000" />
+                          <option name="revision" value="1578" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer_1_1" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1004783208000" />
+                          <option name="revision" value="1575" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer_1_0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="984966918000" />
+                          <option name="revision" value="1572" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer_0_5_4" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="965668819000" />
+                          <option name="revision" value="1570" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer-0-5-3" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="958831107000" />
+                          <option name="revision" value="1568" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer_0_5_2" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="951522299000" />
+                          <option name="revision" value="1566" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer_0_5_1" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="951267036000" />
+                          <option name="revision" value="1563" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/infoviewer-0-5-0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="950818177000" />
+                          <option name="revision" value="1559" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags/first" />
+                        </SvnBranchItem>
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/branches" />
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/InfoViewer/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../plugins/LucenePlugin">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/LucenePlugin/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/LucenePlugin/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/LucenePlugin/branches" />
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/LucenePlugin/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/LucenePlugin/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../plugins/MarkerSets">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/MarkerSets/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/MarkerSets/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/MarkerSets/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../plugins/MyDoggyPlugin">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/MyDoggyPlugin/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/MyDoggyPlugin/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/MyDoggyPlugin/branches" />
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/MyDoggyPlugin/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/MyDoggyPlugin/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../plugins/ProjectViewer">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/branches">
+                    <value>
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1091384045000" />
+                          <option name="revision" value="6273" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/branches/pv_2_0_3_patches" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1043183212000" />
+                          <option name="revision" value="6024" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/branches/projectviewer_2_0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1002810584000" />
+                          <option name="revision" value="5754" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/branches/projectviewer_1_0_3" />
+                        </SvnBranchItem>
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags">
+                    <value>
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1248323100278" />
+                          <option name="revision" value="15753" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_9_1" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1212866940031" />
+                          <option name="revision" value="12812" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_3_7" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1174450366677" />
+                          <option name="revision" value="9181" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_3_6" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1159845385077" />
+                          <option name="revision" value="7160" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_3_5" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1156436063278" />
+                          <option name="revision" value="6776" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_3_4" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1148446882000" />
+                          <option name="revision" value="6407" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_3_3" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1147835118000" />
+                          <option name="revision" value="6404" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_3_2" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1146359115000" />
+                          <option name="revision" value="6402" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_3_1" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1144988405000" />
+                          <option name="revision" value="6398" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_3_0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1138686798000" />
+                          <option name="revision" value="6385" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_2_0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1131597936000" />
+                          <option name="revision" value="6372" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_1" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1108453987000" />
+                          <option name="revision" value="6343" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_1_0_1" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1091384045000" />
+                          <option name="revision" value="6274" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_0_4" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1077682978000" />
+                          <option name="revision" value="6265" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_0_3" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1059442563000" />
+                          <option name="revision" value="6202" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_0_2" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1047576394000" />
+                          <option name="revision" value="6136" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_0_1" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1046293634000" />
+                          <option name="revision" value="6106" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/pv_2_0_0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1042839317000" />
+                          <option name="revision" value="6005" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/projectviewer_1_0_6" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1027330934000" />
+                          <option name="revision" value="5811" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/projectviewer_1_0_4" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1025515357000" />
+                          <option name="revision" value="5760" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/project_viewer_release_1_0_3" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="998657403000" />
+                          <option name="revision" value="5745" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/bp_projectviewer_1_0_3" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="995574723000" />
+                          <option name="revision" value="5739" />
+                          <option name="url" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags/projectviewer_1_0_2" />
+                        </SvnBranchItem>
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/branches" />
+                  <option value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://jedit.svn.sourceforge.net/svnroot/jedit/plugins/ProjectViewer/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../plugins/BufferTabs" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../plugins/ErrorList" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../plugins/InfoViewer" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../plugins/LucenePlugin" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../plugins/MarkerSets" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../plugins/MyDoggyPlugin" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../plugins/ProjectViewer" vcs="svn" />
+  </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
+</project>
+
