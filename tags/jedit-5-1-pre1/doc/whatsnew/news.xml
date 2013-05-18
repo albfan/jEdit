@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article id="whatsnewarticle"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xsi:noNamespaceSchemaLocation='http://www.docbook.org/xsd/4.4/docbook.xsd'>
+
+    <title> What's new in jEdit 5.1 </title>
+    <articleinfo>
+        <author>
+            <othername>The jEdit all-volunteer development team</othername>
+        </author>
+        <date> 2012 </date>
+    </articleinfo>
+
+
+    <para> Detailed changes can always be found in the <ulink
+    url="../CHANGES.txt">Detailed Change Log</ulink>,
+    but here are some of the major features of this version. </para>
+
+    <itemizedlist>
+    
+      <listitem><para>VFS WorkThreads have been rewritten into Tasks, making it 
+      possible to completely remove the old "I/O Progress Monitor" and the 
+      wasteful space it took up in the Task Monitor. Old deprecated
+      classes related to WorkThread and WorkThreadPool have been removed.
+      </para></listitem>
+
+      <listitem><para> New Plugin Manager option to check for and disable
+      obsolete plugins. 
+      Enabled by default, this will ensure that old unsupported plugins do not
+      interfere with the running operation of jEdit. </para> 
+    </listitem>
+    </itemizedlist>
+    
+<!-- :maxLineLen=80:wrap=hard: -->
+</article>
