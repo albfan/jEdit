@@ -4,10 +4,12 @@ jEdit 5.2 version history
 
 {{{ Version 5.2pre2
 
-Thanks to Björn "Vampire" Kautler for contributing to this release.
+Thanks to Björn "Vampire" Kautler and Matthieu Casanova for contributing to this release.
 
 {{{ Bug Fixes
 
+- The native splashscreen is removed as it was not possible to disable it
+  (#3876 - Matthieu Casanova)
 
 }}}
 {{{ Miscellaneous
@@ -72,8 +74,9 @@ Alan Ezust, and Eric Le Lay for contributing to this release.
 - Removed deprecated (ambiguous) overloads of IOUtilities.closeQuietly().
 
 - View.getBuffers() returns an array that is now sorted according to View option.
+  (Alan Ezust)
 
-- New status "REMOVED" added to PluginUpdate message.
+- New status "REMOVED" added to PluginUpdate message. (Dale Anson)
 
 }}}
 {{{ UI improvements
