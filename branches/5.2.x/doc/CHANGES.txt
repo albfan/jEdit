@@ -4,7 +4,8 @@ jEdit 5.2 version history
 
 {{{ Version 5.2pre2
 
-Thanks to Björn "Vampire" Kautler and Matthieu Casanova for contributing to this release.
+Thanks to Björn "Vampire" Kautler and Matthieu Casanova for contributing to this
+release.
 
 {{{ Bug Fixes
 
@@ -33,9 +34,10 @@ Thanks to Björn "Vampire" Kautler and Matthieu Casanova for contributing to thi
 {{{ Version 5.2pre1
 
 Thanks to Björn "Vampire" Kautler, Matthieu Casanova, Dale Anson, Thomas Meyer,
-Patrick Eibl, László Schmidt, Zsombor Franczia, Bence Pintér, Makarius, Benjamin Zengin,
-Yihua Zhang, Marc Häfner, EdorFaus, Jordan Miner, Thiemo Kellner, Tim Blackler,
-Alan Ezust, and Eric Le Lay for contributing to this release.
+Patrick Eibl, László Schmidt, Zsombor Franczia, Bence Pintér, Makarius,
+Benjamin Zengin, Yihua Zhang, Marc Häfner, EdorFaus, Jordan Miner,
+Thiemo Kellner, Tim Blackler, Alan Ezust, and Eric Le Lay for contributing to
+this release.
 
 {{{ Bug Fixes
 
@@ -76,8 +78,8 @@ Alan Ezust, and Eric Le Lay for contributing to this release.
 
 - Removed deprecated (ambiguous) overloads of IOUtilities.closeQuietly().
 
-- View.getBuffers() returns an array that is now sorted according to View option.
-  (Alan Ezust)
+- View.getBuffers() returns an array that is now sorted according to View
+  option. (Alan Ezust)
 
 - New status "REMOVED" added to PluginUpdate message. (Dale Anson)
 
@@ -160,7 +162,8 @@ Alan Ezust, and Eric Le Lay for contributing to this release.
 
 - Add copyright tag to the OS X application bundle (Björn "Vampire" Kautler)
 
-- Add UTI to the document type in the OS X application bundle (Björn "Vampire" Kautler)
+- Add UTI to the document type in the OS X application bundle
+  (Björn "Vampire" Kautler)
 
 - Bunde version 1.3 of the MacOSX plugin (Björn "Vampire" Kautler)
 
@@ -173,5 +176,5 @@ Alan Ezust, and Eric Le Lay for contributing to this release.
 }}}
 
 jEdit buffer local properties:
-:maxLineLen=90:wrap=hard:autoIndent=simple:noTabs=true:indentSize=2:tabSize=2:
+:maxLineLen=80:wrap=hard:autoIndent=simple:noTabs=true:indentSize=2:tabSize=2:
 :folding=explicit:collapseFolds=2:
