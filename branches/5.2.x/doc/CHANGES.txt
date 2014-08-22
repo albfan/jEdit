@@ -4,8 +4,8 @@ jEdit 5.2 version history
 
 {{{ Version 5.2pre2
 
-Thanks to Björn "Vampire" Kautler and Matthieu Casanova for contributing to this
-release.
+Thanks to Björn "Vampire" Kautler, Makarius, and Matthieu Casanova for
+contributing to this release.
 
 {{{ Bug Fixes
 
@@ -28,6 +28,7 @@ release.
 }}}
 {{{ API Changes
 
+  - DockableWindowContainer interface is now public (Patch #528 - Makarius)
 
 }}}
 {{{ Editing
