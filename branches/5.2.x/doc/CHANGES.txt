@@ -5,7 +5,7 @@ jEdit 5.2 version history
 {{{ Version 5.2pre2
 
 Thanks to Björn "Vampire" Kautler, Makarius, Dale Anson, Alan Ezust,
-and Matthieu Casanova for contributing to this release.
+Eric Le Lay, and Matthieu Casanova for contributing to this release.
 
 {{{ Bug Fixes
 
@@ -24,13 +24,20 @@ and Matthieu Casanova for contributing to this release.
 - Fix for bug #3389 in BufferSwitcher.java where look and feel was locked to
   Metal. (Dale Anson)
 
+- Fix for bug #3893 where PluginResURLConnection.openStream returning null for
+  non existing resources made jEdit hang on Java 8, Mac OS 10.10. (Eric Le Lay)
+
 }}}
 {{{ Miscellaneous
 
 }}}
 {{{ API Changes
 
-  - DockableWindowContainer interface is now public (Patch #528 - Makarius)
+- DockableWindowContainer interface is now public (Patch #528 - Makarius)
+
+- PluginResURLConnection.openStream() is garanteed to return non-null stream;
+  PluginResURLConnection.connect() and PluginResURLConnection.openStream()
+  throw an IOException when the resource is not found.
 
 }}}
 {{{ Editing
