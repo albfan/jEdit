@@ -21,6 +21,9 @@ Eric Le Lay, and Matthieu Casanova for contributing to this release.
 - The native splashscreen is removed as it was not possible to disable it
   (#3876 - Matthieu Casanova)
 
+- Bugfix in EditPane.java related to file status checks.
+  (Patch #534 - Matt Galligan)
+
 - Fix for bug #3389 in BufferSwitcher.java where look and feel was locked to
   Metal. (Dale Anson)
 
@@ -29,6 +32,7 @@ Eric Le Lay, and Matthieu Casanova for contributing to this release.
 
 }}}
 {{{ Miscellaneous
+- MiscUtilities.openInDesktop() works with URIs on Windows now. (Alan Ezust)
 
 }}}
 {{{ API Changes
