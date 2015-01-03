@@ -30,6 +30,9 @@ Eric Le Lay, and Matthieu Casanova for contributing to this release.
 - Fix for bug #3893 where PluginResURLConnection.openStream returning null for
   non existing resources made jEdit hang on Java 8, Mac OS 10.10. (Eric Le Lay)
 
+- Fix for Bugs #3895, #3897: Invalid HelpIndex URLs on windows.
+  (Alan Ezust,  Eric Le Lay)
+
 }}}
 {{{ Miscellaneous
 - MiscUtilities.openInDesktop() works with URIs on Windows now. (Alan Ezust)
@@ -81,6 +84,8 @@ this release.
 
 - Fix java installer bug: Installing from jedit5.1.0install.jar failure
   (bug #3837 - Eric Le Lay)
+
+- HelpIndex includes .txt files again. (Bug #3896 - Alan Ezust)
 
 }}}
 {{{ API Changes

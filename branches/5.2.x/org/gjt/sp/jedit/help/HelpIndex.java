@@ -144,7 +144,7 @@ class HelpIndex
 			ZipEntry entry = (ZipEntry)e.nextElement();
 			String name = entry.getName();
 			String lname = name.toLowerCase();
-			if(lname.endsWith(".html")/*  || lname.endsWith(".txt") */)
+			if(lname.endsWith(".html") || lname.endsWith(".txt") )
 			{
 				// only works for jEdit plugins
 				String url = "jeditresource:/" +
@@ -162,20 +162,19 @@ class HelpIndex
 	 * index.
 	 * @param url The HTML file's URL
 	 */
-	public void indexURL(String url) throws Exception
+	public void indexURL(String path) throws Exception
 	{
-		InputStream _in;
-
-		if(MiscUtilities.isURL(url))
-			_in =  new URL(url).openStream();
-		else
+		URL url;		
+		if (MiscUtilities.isURL(path))
+			url = new URL(path);
+		else 
 		{
-			_in = new FileInputStream(url);
-			// hack since HelpViewer needs a URL...
-			url = "file:" + url;
+			File f = new File(path);
+			url = f.toURI().toURL();
 		}
-
-		indexStream(_in,url);
+		InputStream _in;
+		_in =  url.openStream();
+		indexStream(_in, url.toString());
 	} //}}}
 
 	//{{{ lookupWord() method
