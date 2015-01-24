@@ -5,7 +5,8 @@ jEdit 5.2 version history
 {{{ Version 5.2pre2
 
 Thanks to Björn "Vampire" Kautler, Makarius, Dale Anson, Alan Ezust,
-Eric Le Lay, and Matthieu Casanova for contributing to this release.
+Matt Galligan, Eric Le Lay, Makarius, and Matthieu Casanova for contributing to
+this release.
 
 {{{ Bug Fixes
 
@@ -44,7 +45,7 @@ Eric Le Lay, and Matthieu Casanova for contributing to this release.
 
 - PluginResURLConnection.openStream() is garanteed to return non-null stream;
   PluginResURLConnection.connect() and PluginResURLConnection.openStream()
-  throw an IOException when the resource is not found.
+  throw an IOException when the resource is not found. (Eric Le Lay)
 
 }}}
 {{{ Editing
