@@ -2,7 +2,7 @@ jEdit 5.2 version history
        (changes since jEdit 5.1.0)
 :encoding=UTF-8:
 
-{{{ Version 5.2pre2
+{{{ Version 5.2.0
 
 Thanks to Björn "Vampire" Kautler, Makarius, Dale Anson, Alan Ezust,
 Matt Galligan, Eric Le Lay, Makarius, and Matthieu Casanova for contributing to
