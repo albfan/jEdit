@@ -50,6 +50,8 @@ this release.
   the need for Rosetta being installed, which is not supported anymore anyway
   since Mac OS 10.7. (Björn "Vampire" Kautler)
 
+- HelpIndex includes .txt files again. (Bug #3896 - Alan Ezust)
+
 }}}
 {{{ API Changes
 
@@ -97,8 +99,6 @@ this release.
 
 - Fix java installer bug: Installing from jedit5.1.0install.jar failure
   (bug #3837 - Eric Le Lay)
-
-- HelpIndex includes .txt files again. (Bug #3896 - Alan Ezust)
 
 }}}
 {{{ API Changes
