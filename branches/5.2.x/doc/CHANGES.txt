@@ -5,7 +5,7 @@ jEdit 5.2 version history
 {{{ Version 5.2.0
 
 Thanks to Björn "Vampire" Kautler, Makarius, Dale Anson, Alan Ezust,
-Matt Galligan, Eric Le Lay, Makarius, and Matthieu Casanova for contributing to
+Matt Galligan, Eric Le Lay, and Matthieu Casanova for contributing to
 this release.
 
 {{{ Bug Fixes
