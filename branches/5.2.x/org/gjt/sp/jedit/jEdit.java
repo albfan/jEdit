@@ -105,7 +105,7 @@ public class jEdit
 	public static String getBuild()
 	{
 		// (major).(minor).(<99 = preX, 99 = "final").(bug fix)
-		return "05.02.99.00";
+		return "05.02.99.01";
 	} //}}}
 
 	//{{{ main() method
@@ -1134,9 +1134,9 @@ public class jEdit
 	{
 		if (name == null)
 		{
-			return null;	
+			return null;
 		}
-		
+
 		EditPlugin[] plugins = getPlugins();
 		EditPlugin plugin = null;
 		for (EditPlugin ep : plugins)
@@ -1147,9 +1147,9 @@ public class jEdit
 				break;
 			}
 		}
-		if (!loadIfNecessary) 
+		if (!loadIfNecessary)
 		{
-			return plugin;	
+			return plugin;
 		}
 		if (plugin instanceof EditPlugin.Deferred)
 		{
@@ -3836,30 +3836,30 @@ public class jEdit
 		// been loaded yet.
 		if (EventQueue.isDispatchThread())
 		{
-			try 
+			try
 			{
 				UIManager.setLookAndFeel(sLf);
 			}
-			catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) 
+			catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e)
 			{
 				// ignored, there really isn't anything to do and this may be
 				// bogus, the lnf may be from the Look And Feel plugin
 			}
 		}
-		else 
+		else
 		{
 			try
 			{
 				EventQueue.invokeAndWait(
 					new Runnable()
 					{
-						public void run() 
+						public void run()
 						{
 							try
 							{
 								UIManager.setLookAndFeel(sLf);
 							}
-							catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) 
+							catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e)
 							{
 								// same as above, there really isn't anything to do and this may be
 								// bogus, the lnf may be from the Look And Feel plugin
@@ -3868,9 +3868,9 @@ public class jEdit
 					}
 				);
 			}
-			catch (InterruptedException | InvocationTargetException e) 
+			catch (InterruptedException | InvocationTargetException e)
 			{
-				// don't worry about this one either	
+				// don't worry about this one either
 			}
 		}
 
