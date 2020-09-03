@@ -1,1 +1,0 @@
-jre >= @target.java.version@ | jdk >= @target.java.version@ | jdk11 | jdk12
